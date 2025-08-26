@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Template Demo</title>
+</head>
+<body>
+    <template id="cardTemplate">
+        <div class="card" style="border:1px solid #ccc; padding:10px; margin:10px;">
+            <h3 class="title"></h3>
+            <p class="desc"></p>
+        </div>
+    </template>
+
+    <div id="container"></div>
+    <button onclick="addCards()">Add Cards</button>
+
+    <script>
+        const products = [
+            { title: "Laptop", desc: "High-performance laptop" },
+            { title: "Phone", desc: "Latest smartphone model" },
+            { title: "Headphones", desc: "Noise-cancelling headphones" }
+        ];
+
+        function addCards() {
+            const container = document.getElementById("container");
+            const template = document.getElementById("cardTemplate");
+
+            products.forEach(product => {
+                const clone = template.content.cloneNode(true);
+                clone.querySelector(".title").innerHTML = product.title;
+                clone.querySelector(".desc").innerHTML = product.desc;
+                container.appendChild(clone);
+            });
+        }
+    </script>
+</body>
+</html>

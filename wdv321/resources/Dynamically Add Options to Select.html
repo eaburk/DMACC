@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Populate Dropdown Demo</title>
+</head>
+<body>
+    <select id="fruits"></select>
+    <button onclick="loadFruits()">Load Fruits</button>
+
+    <script>
+        const fruits = ["Apple", "Banana", "Cherry", "Mango", "Pineapple"];
+
+        function loadFruits() {
+            const select = document.getElementById("fruits");
+            select.innerHTML = ""; // Clear previous options
+
+            const selectOneOption = document.createElement("option");
+            selectOneOption.textContent = "Select One";
+            select.appendChild(selectOneOption)
+
+            fruits.forEach(fruit => {
+                const option = document.createElement("option");
+                option.value = fruit;
+                option.textContent = fruit;
+                select.appendChild(option);
+            });
+        }
+    </script>
+</body>
+</html>
