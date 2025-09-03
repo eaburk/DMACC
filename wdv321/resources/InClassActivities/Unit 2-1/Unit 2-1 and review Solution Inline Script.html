@@ -1,35 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza Builder Demo</title>
-    <script src="script2-1-in-class.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Builder Demo</title>
 </head>
 <body>
-    <h1>Pizza Builder Demo</h1>
+  <h1>Pizza Builder Demo</h1>
 
-    <h2>Step 1: Dropdown Created with document.write()</h2>
-    <select id="crustSelect">
-      <script>
-        // Populate using document.write()
+  <h2>Step 1: Dropdown Created with document.write()</h2>
+  <select id="crustSelect">
+    <script>
+      // Populate using document.write()
 
-        let crustTypes = ["Thin Crust", "Thick Crust", "Stuffed Crust", "Gluten Free"];
-        for (let i = 0; i < crustTypes.length; i++) {
-            document.write("<option value='" + crustTypes[i] + "'>" + crustTypes[i] + "</option>");
-        }
-      </script>
-    </select>
+      let crustTypes = ["Thin Crust", "Thick Crust", "Stuffed Crust", "Gluten Free"];
+      for (let i = 0; i < crustTypes.length; i++) {
+          document.write("<option value='" + crustTypes[i] + "'>" + crustTypes[i] + "</option>");
+      }
+    </script>
+  </select>
 
-    <h2>Step 2: Dropdown Created with createElement() and appendChild()</h2>
-    <select id="toppingSelect"></select>
+  <h2>Step 2: Dropdown Created with createElement() and appendChild()</h2>
+  <select id="toppingSelect"></select>
+  <script>
+    // Populate createElement() and appendChild()
+    let toppings = ["Pepperoni", "Sausage", "Mushrooms", "Onions"];
+    let elementSelect = document.getElementById("toppingSelect");
 
-    <h2>Step 3: Add a New Topping</h2>
-    <input type="text" id="newTopping" placeholder="Enter new topping">
-    <button id="addToppingBtn">Add Topping</button>
+    toppings.forEach(function (topping) {
+      let option = document.createElement("option");
+      option.value = topping;
+      option.textContent = topping;
+      elementSelect.appendChild(option);
+    });
+  </script>
 
-    <h2>Step 4: Switch Between Pizza Styles</h2>
-    <button id="loadVeggieBtn" onclick='loadToppings(["Spinach", "Olives", "Green Peppers", "Tomatoes"]);'>Load Veggie Toppings</button>
-    <button id="loadMeatBtn">Load Meat Toppings</button>
+  <h2>Step 3: Add a New Topping</h2>
+  <input type="text" id="newTopping" placeholder="Enter new topping">
+  <button id="addToppingBtn">Add Topping</button>
+  <script>
+    // Dynamically add a new option
+    document.getElementById("addToppingBtn").addEventListener("click", function () {
+      let newToppingInput = document.getElementById("newTopping");
+      let newTopping = newToppingInput.value.trim();
+
+      if (newTopping === "") {
+        alert("Please enter a topping name!");
+        return;
+      }
+
+      let option = document.createElement("option");
+      option.value = newTopping;
+      option.textContent = newTopping;
+      elementSelect.appendChild(option);
+
+      console.log("Added new topping:", newTopping);
+      newToppingInput.value = "";
+    });
+  </script>
+
+  <h2>Step 4: Switch Between Pizza Styles</h2>
+  <button id="loadVeggieBtn" onclick='loadToppings(["Spinach", "Olives", "Green Peppers", "Tomatoes"]);'>Load Veggie Toppings</button>
+  <button id="loadMeatBtn">Load Meat Toppings</button>
+  <script>
+    // --- STEP 4: Dynamically change all the options ---
+    const meatToppings = ["Bacon", "Ham", "Chicken", "Salami"];
+
+    document.getElementById("loadMeatBtn").addEventListener("click", function () {
+      loadToppings(meatToppings);
+    });
+
+    function loadToppings(list) {
+      // Remove old options first
+      elementSelect.innerHTML = "";
+
+      // Add new options dynamically
+      list.forEach(function (topping) {
+        let option = document.createElement("option");
+        option.value = topping;
+        option.textContent = topping;
+        elementSelect.appendChild(option);
+      });
+
+      console.log("Updated toppings:", list);
+    }
+  </script>
 </body>
 </html>
