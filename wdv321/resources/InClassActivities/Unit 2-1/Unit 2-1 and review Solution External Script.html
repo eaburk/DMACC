@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Builder Demo</title>
+    <script src="script2-1.js"></script>
+</head>
+<body>
+    <h1>Pizza Builder Demo</h1>
+
+    <h2>Step 1: Dropdown Created with document.write()</h2>
+    <select id="crustSelect">
+      <script>
+        // Populate using document.write()
+
+        let crustTypes = ["Thin Crust", "Thick Crust", "Stuffed Crust", "Gluten Free"];
+        for (let i = 0; i < crustTypes.length; i++) {
+            document.write("<option value='" + crustTypes[i] + "'>" + crustTypes[i] + "</option>");
+        }
+      </script>
+    </select>
+
+    <h2>Step 2: Dropdown Created with createElement() and appendChild()</h2>
+    <select id="toppingSelect"></select>
+    <script>
+
+    </script>
+
+    <h2>Step 3: Add a New Topping</h2>
+    <input type="text" id="newTopping" placeholder="Enter new topping">
+    <button id="addToppingBtn">Add Topping</button>
+
+    <h2>Step 4: Switch Between Pizza Styles</h2>
+    <button id="loadVeggieBtn">Load Veggie Toppings</button>
+    <button id="loadMeatBtn">Load Meat Toppings</button>
+</body>
+</html>
