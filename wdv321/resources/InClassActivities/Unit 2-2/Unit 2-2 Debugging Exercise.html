@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>WDV321 Advanced JavaScript</title>
+    <style>
+        .displayContainer {
+            border: thin solid black;
+            width: 50%;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script src="unit2-2-debugging-exercise-script.js" defer></script>
+</head>
+
+<body>
+    <h1>WDV321 Advanced JavaScript</h1>
+    <h2>Debugging Activity - Music Genre Selector</h2>
+    <p>
+        The user selects a music genre from the dropdown, and the list of artists should appear.
+        Your job: **fix the code** so the correct list shows.
+    </p>
+
+    <label for="genreSelect"><strong>Select a Genre:</strong></label>
+    <select id="genreSelect">
+        <option value="">-- Select --</option>
+        <option value="rock">Rock</option>
+        <option value="pop">Pop</option>
+        <option value="jazz">Jazz</option>
+    </select>
+
+    <section class="displayContainer">
+        <div id="rock" class="hidden">
+            <h3>Rock Artists</h3>
+            <ul>
+                <li>Queen</li>
+                <li>Nirvana</li>
+                <li>Led Zeppelin</li>
+                <li>Foo Fighters</li>
+            </ul>
+        </div>
+
+        <div id="pop" class="hidden">
+            <h3>Pop Artists</h3>
+            <ul>
+                <li>Taylor Swift</li>
+                <li>Harry Styles</li>
+                <li>Ariana Grande</li>
+                <li>Ed Sheeran</li>
+            </ul>
+        </div>
+
+        <div id="jazz" class="hidden">
+            <h3>Jazz Artists</h3>
+            <ul>
+                <li>Miles Davis</li>
+                <li>Louis Armstrong</li>
+                <li>John Coltrane</li>
+                <li>Billie Holiday</li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>
