@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>WDV221 Intro Javascript</h1>
+  </header>
+  <main>
+    <script>
+      const helloMessage = () => {
+        const userName = prompt("Enter your name.");
+        alert(`Hello, ${userName}`);
+      }
+
+      function addNumbers(a, b) {
+        const sum = a + b;
+        document.write(`<p>Total is: ${sum}</p>`);
+      }
+      addNumbers(3, 5);
+    </script>
+    <p>
+      <button onClick="helloMessage()">Click me!</button>
+    </p>
+  </main>
+  <footer>
+    Copyright YourCompanyName
+  </footer>
+</body>
+</html>
