@@ -9,10 +9,11 @@
   <h1>WDV221 Intro Javascript - Functions In Class Activity</h1>
   <script>
     const makeGreeting = (name, programmingLanguage) => {
-      return `<p>Hello, ${name}! I like to write ${programmingLanguage} code.</p>`;
+      return `<div>Hello, ${name}! I like to write ${programmingLanguage} code.</div>`;
     }
 
     const outputGreeting = (inName, inProgrammingLanguage) => {
+
       const greeting = makeGreeting(inName, inProgrammingLanguage);
       const outputParagraphTag = document.getElementById("output");
       const currentContent = outputParagraphTag.innerHTML;
