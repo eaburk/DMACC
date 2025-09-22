@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Processing Demo</title>
+  <script src="formsDemo.js" defer></script>
+</head>
+<body>
+  <h1>Form Processing with JavaScript</h1>
+
+  <form id="demoForm">
+    <!-- Text Input -->
+    <label>
+      Name:
+      <input type="text" id="custName" name="custName" placeholder="Enter your name">
+    </label>
+    <br><br>
+
+    <!-- Radio Buttons -->
+    <fieldset>
+      <legend>Experience Level:</legend>
+      <label>
+        <input type="radio" name="experience" value="Beginner"> Beginner
+      </label>
+      <label>
+        <input type="radio" name="experience" value="Intermediate"> Intermediate
+      </label>
+      <label>
+        <input type="radio" name="experience" value="Advanced"> Advanced
+      </label>
+    </fieldset>
+    <br>
+
+    <!-- Dropdown -->
+    <label>
+      Favorite Product:
+      <select id="productSelect" name="product">
+        <option value="">Select one...</option>
+        <option value="WB">Website Builder</option>
+        <option value="AT">Analytics Tool</option>
+        <option value="ECS">E-commerce Store</option>
+      </select>
+    </label>
+    <br><br>
+
+    <input type="submit" value="Submit Form">
+    <input type="reset" value="Reset Form">
+  </form>
+</body>
+</html>
