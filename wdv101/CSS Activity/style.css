@@ -1,0 +1,100 @@
+/* mission 1 */
+/*
+  Outcome:
+    All h1 and h2 elements will be purple in color and have the font Arial.
+*/
+/* element selector */
+h2 {
+  font-family: Arial;
+}
+
+/* group selector */
+h1, h2 {
+  color: purple;
+}
+
+/* mission 2 */
+/*
+  Outcome:
+    All elements with the class special-text will have a lightgreen background.
+    The main container of the page will be centered and have a width of 80%.
+*/
+/* class selector */
+.special-text {
+  background-color: lightgreen;
+}
+
+/* id selector */
+#container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* mission 3 */
+/*
+  Outcome:
+    All <li> elements will be darkblue.
+    The h1 will remain red because its inline style has the highest
+    precedence and overrides the embedded style.
+*/
+/* descendant selector */
+ul li {
+  color: darkblue;
+}
+
+/* mission 3 - precedence solution is in the style tag in the HTML file */
+
+/* mission 4 */
+/*
+  Outcome:
+    The link's color will turn hotpink when a user hovers over it.
+    The box-sizing property will be applied to all elements,
+    changing how padding and borders affect their total size.
+*/
+/* Pseudo-Class Selector */
+a:hover {
+  color: hotpink;
+}
+
+/* Universal Selector */
+* {
+  box-sizing: border-box;
+}
+
+/* mission 5 */
+/* Inheritance */
+/*
+  Outcome:
+    All text within the container, including headings and paragraphs,
+    will inherit the font-size and font-family from the parent #container element.
+*/
+#container {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+/* <span> & Class Selector */
+/*
+  Outcome:
+    The word "span" will be bolded.
+    This demonstrates using a <span> to target a specific piece of inline content.
+*/
+.bold-word {
+  font-weight: bold;
+}
+
+/* mission 6 */
+/* specificity conflict */
+/*
+  Outcome:
+    The paragraph with the class special-text will be blue.
+    This is because the class selector (.special-text) has a higher specificity
+    score than the element selector (p). It wins the conflict.
+*/
+.special-text {
+  color: blue;
+}
+
+p {
+  color: red;
+}

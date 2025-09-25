@@ -1,0 +1,24 @@
+Given the start index.html file, complete the missions below.
+
+Mission 1: The Basics
+    Using an element selector, make all <h2> tags on the page font-family: Arial;.
+    Using a group selector, change the color of all h1 and h2 elements to purple.
+
+Mission 2: Getting Specific
+    Use a class selector to make all elements with the class special-text have a background-color of lightgreen.
+    Use an ID selector to set the width of the #container to 80% and margin to 0 auto; to center it on the page.
+
+Mission 3: Descendants & Conflicts
+    Using a descendant selector, make only the list items (<li>) inside the <ul> have a color: darkblue;.
+    Challenge: The h1 tag has an inline style. Add an embedded CSS rule in the <head> of the HTML to try and change its color to green. Observe and discuss why the inline style wins (demonstrates precedence).
+
+Mission 4: Pseudo & Universal Rules
+    Using a pseudo-class selector, change the color of the link (<a>) to hotpink when the user hovers over it.
+    Using a universal selector, set box-sizing: border-box; for every element on the page.
+
+Mission 5: Inheritance & Spans
+    Set the font-size: 20px; and font-family: sans-serif; for the #container ID. Observe how all child elements inherit this style (demonstrates inheritance).
+    Use a <span> tag and a class selector to make the first few words of a paragraph font-weight: bold;.
+
+Mission 6: The Final Conflict
+    Create a rule for the .special-text class to have a color: blue;. Then, create a rule for the p tag (an element selector) to have a color: red;. Since the <p> with the class special-text has both rules applied, discuss why the .special-text rule wins due to its higher specificity.
