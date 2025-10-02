@@ -1,3 +1,7 @@
+function formatDate(dateString) {
+  return new Date(dateString).toLocaleString("en-US");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const noteInput = document.getElementById("noteInput");
     const addNoteBtn = document.getElementById("addNoteBtn");
@@ -13,12 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
             noteEl.classList.add("note");
 
             const noteText = document.createElement("span");
-            noteText.textContent = note;
+            noteText.textContent = note.noteText;
 
             const editInput = document.createElement("input");
             editInput.type = "text";
             editInput.classList.add("hidden");
-            editInput.value = note;
+            editInput.value = note.noteText;
 
             //edit button
             const editBtn = document.createElement("button");
@@ -34,7 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
             saveBtn.textContent = "Save";
             saveBtn.classList.add("hidden");
             saveBtn.addEventListener("click", () => {
-              notes[index] = editInput.value;
+              notes[index] = {
+                noteText: editInput.value
+              };
               localStorage.setItem("notes", JSON.stringify(notes));
               renderNotes();
             });
@@ -48,11 +54,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 renderNotes();
             });
 
+            const timestampEl = document.createElement("span");
+
+            timestampEl.textContent =
+              `Created: ${formatDate(note.createdAt)}
+                , Updated: ${formatDate(note.updatedAt)}`;
+
             noteEl.appendChild(noteText);
             noteEl.appendChild(editInput);
             noteEl.appendChild(saveBtn);
             noteEl.appendChild(editBtn);
             noteEl.appendChild(deleteBtn);
+            noteEl.appendChild(timestampEl);
             notesDiv.appendChild(noteEl);
         });
     }
@@ -60,7 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
     addNoteBtn.addEventListener("click", () => {
         const noteText = noteInput.value.trim();
         if (noteText) {
-            notes.push(noteText);
+            notes.push(
+              {
+                noteText: noteText,
+                createdAt: Date.now(),
+                updatedAt: Date.now()
+              }
+            );
             localStorage.setItem("notes", JSON.stringify(notes));
             renderNotes();
             noteInput.value = "";
