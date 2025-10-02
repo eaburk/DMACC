@@ -1,0 +1,80 @@
+#container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 75%;
+    }
+    #notes {
+      border: 1px solid grey;
+      border-radius: 5px;
+      box-shadow: 5px 5px 5px #dcdcdc;
+      margin-top: 10px;
+    }
+
+    .notesContainer {
+      border: 1px solid grey;
+      border-radius: 5px;
+      width: 300px;
+      display: inline-block;
+      padding: 5px;
+      margin: 15px;
+      background: #dcdcdc;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .notesEditInput {
+      background: none;
+    }
+
+    .notesAddInput {
+      background: none;
+      margin-left: 0;
+    }
+
+    .editBtn {
+      background: rgba(0, 94, 255, 0.564);
+      color: white;
+    }
+
+    .editBtn:hover {
+      background: rgb(234, 159, 131) !important;
+    }
+
+    .deleteBtn {
+      background: white;
+      padding: 5px;
+    }
+
+    .cancelBtn {
+      background: white;
+      border: 1px solid black;
+      box-shadow: 2px 5px 5px #dcdcdc;
+      border-radius: 4px;
+      padding: 5px;
+    }
+
+    .button {
+      box-shadow: 2px 5px 5px #dcdcdc;
+      border: 1px solid grey;
+      border-radius: 4px;
+      padding: 5px 20px;
+      margin: 0 10px;
+      cursor:pointer;
+    }
+
+    .button:hover {
+      background: darkgrey;
+    }
+
+    .timestampSpan {
+      margin: 0 15px;
+      font-style: italic;
+      color: green;
+    }
+
+    #errorMessages {
+      color: red;
+      height: 15px;
+    }
