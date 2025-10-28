@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // XMLHttpRequest version (old)
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "data.php");
+    xhr.onload = () => console.log(xhr.responseText);
+    xhr.send();
+
+    // Fetch version (modern)
+    fetch("data.php")
+      .then(res => res.json())
+      .then(data => console.log(data));
+  </script>
+</body>
+</html>
