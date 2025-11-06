@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Game Profile</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #gameCard {
+            border: 1px solid #333;
+            padding: 20px;
+            width: 300px;
+            margin: 20px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        button { margin: 5px; padding: 5px 10px; }
+    </style>
+
+    <script>
+      const game = {
+        title: "Half Life 2",
+        genre: "Action-Adventure",
+        rating: "E for Everyone",
+        play: function() {
+            // Populate game info
+            $('#gameTitle').text(this.title);
+            $('#gameGenre').text(`Genre: ${this.genre}`);
+            $('#gameRating').text(`Rating: ${this.rating}`);
+
+            // Display game info
+            $('#gameInfo').hide().fadeIn(1000);
+        }
+      };
+
+      $(document).ready(() => {
+        // Button click triggers play method and animation
+        $('#playGameBtn').click(function() {
+            game.play();
+        });
+
+        // Hide and show card with animation
+        $('#hideCardBtn').click(function() {
+            $('#gameInfo').slideUp();
+        });
+
+        $('#showCardBtn').click(function() {
+            $('#gameInfo').hide().slideDown();
+        });
+      });
+    </script>
+</head>
+<body>
+    <div id="gameCard">
+      <div id="gameInfo">
+        <h2 id="gameTitle"></h2>
+        <p id="gameGenre"></p>
+        <p id="gameRating"></p>
+      </div>
+      <button id="playGameBtn">Play Game</button>
+      <button id="hideCardBtn">Hide Card</button>
+      <button id="showCardBtn">Show Card</button>
+    </div>
+
+
+</body>
+</html>
