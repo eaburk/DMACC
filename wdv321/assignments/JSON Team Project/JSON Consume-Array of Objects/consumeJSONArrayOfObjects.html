@@ -3,57 +3,48 @@
 <head>
 <meta charset="utf-8">
 <title>WDV321 Advanced Javascript - JSON</title>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-  crossorigin="anonymous"></script>
-
 <!--
-
     Instructions:
-    	1. Incorporate the createJSONArray.js file into this page as an external javascript file.
-        2. Access the JSON object in local storage and convert it into a javascript object.
-        3. Use the information in the object to complete a student card for EACH student object.
-        4. Account for the fact that there could be a random number of student objects.
-        5. Use the Fetch API or jQuery for AJAX features. If you use jQuery, also use jQuery whenever possible (event listeners, AJAX calls etc.)
+    	1. Incorporate the script.js file into this page as an external javascript file.
+
+      -- for the instructions below, the javascript should be added to the external script.js file --
+      2. Access the JSON data in local storage and convert it into a javascript array of objects.
+      3. Use the information in the array to complete a student card for EACH student object.
+      4. Account for the fact that there could be a random number of student objects in the array.
+      5. Add a form to allow adding a new student object to the array
+        a. Adding a new student will update local storage
+        b. Make sure the newly added student is displayed on the page.
+      6. Do not use jQuery, use plain Javascript
 -->
+  <style>
+    .studentCard	{
+      width:200px;
+      box-sizing:border-box;
+      background-color:lightblue;
+      padding-left:5px;
+      padding-top:3px;
+      border:thin solid blue;
+      box-shadow: 2px 2px 2px grey;
+    }
 
-<style>
-	.studentCard	{
-		width:200px;
-		box-sizing:border-box;
-		background-color:lightblue;
-		padding-left:5px;
-		padding-top:3px;
-		border:thin solid blue;
-		box-shadow: 2px 2px 2px grey;
-	}
-
-	.studentCard h3	{
-		margin:0px;
-	}
-</style>
-
-
-
+    .studentCard h3	{
+      margin:0px;
+    }
+  </style>
 </head>
 
 <body>
-	<h1>WDV321 Advanced Javascript</h1>
-    <h2>Unit-8 JSON Objects</h2>
-    <h3>Creating and consuming a JSON object</h3>
+  <h1>WDV321 Advanced Javascript</h1>
+  <h2>Unit-8 JSON Objects</h2>
+  <h3>Creating and consuming a JSON object</h3>
 
-<div class="studentCard">
-	<h3>Student ID:</h3>
-    <p>Student GPA:</p>
-	<p>Student Courses:
-    	<ul>
-			<!-- display the courses as list items -->
-    	</ul>
-    </p>
-
-</div>
-
-
+  <div class="studentCard">
+    <h3>Student ID:</h3>
+      <p>Student GPA:</p>
+      Student Courses:
+      <ul>
+      <!-- display the courses as list items -->
+      </ul>
+  </div>
 </body>
 </html>
