@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class Activity: Dynamic Dropdowns</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    h1 {
+      margin-bottom: 0.25rem;
+    }
+
+    .instructions {
+      background-color: #f7f7f7;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .instructions h2 {
+      margin-top: 0;
+    }
+
+    .instructions ol {
+      padding-left: 1.2rem;
+    }
+
+    .activity-box {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 4px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: bold;
+    }
+
+    select, button {
+      padding: 0.4rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Class Activity: Dynamic Dropdowns</h1>
+  <p>
+    In this activity, you will use JavaScript to dynamically populate a dropdown
+    using an array and DOM methods.
+  </p>
+
+  <div class="instructions">
+    <h2>Expectations</h2>
+    <ul>
+      <li>All Javascript code should be in a &lt;script&gt; block in the &lt;head&gt; section of the HTML page.</li>
+      <li>Do not use document.write()</li>
+      <li>Use addEventListener() for events</li>
+      <li>Functions are defined using the arrow syntax</li>
+      <li>Use DOMContentLoaded event to make sure content is loaded.</li>
+    </ul>
+    <h2>Instructions</h2>
+    <ol>
+      <li>Create a JavaScript array containing at least 5 fruit names.</li>
+      <li>Write a function that:
+        <ul>
+          <li>Clears all existing options from the dropdown.</li>
+          <li>Adds a default option labeled <strong>"Select One"</strong>.</li>
+          <li>Loops through the array and creates an <code>&lt;option&gt;</code> for each item.</li>
+        </ul>
+      </li>
+      <li>Use <code>createElement()</code> and <code>appendChild()</code> to build the dropdown.</li>
+      <li>Add an event listener to the button so the dropdown loads when clicked.</li>
+    </ol>
+  </div>
+
+  <div class="activity-box">
+    <label for="fruits">Select a Fruit</label>
+    <select id="fruits"></select>
+
+    <button id="btnLoadFruits">Load Fruits</button>
+  </div>
+
+</body>
+</html>
