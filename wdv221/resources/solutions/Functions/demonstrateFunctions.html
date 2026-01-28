@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Board Game Turns - JavaScript Functions</title>
+
+  <script>
+    // global variable
+    let gameTitle = "Dungeon Dice";
+
+    /*
+       Task 1
+       Builds and Returns a message
+    */
+    function buildTurnMessage(playerName) {
+      let message = gameTitle + ": It is now " + playerName + "'s turn.";
+      return message;
+    }
+
+
+    /*
+       Task 2
+       Calls another function
+    */
+    function takeTurn(playerName) {
+      let turnMessage = buildTurnMessage(playerName);
+      alert(turnMessage);
+    }
+
+
+    /*
+       Task 3
+       No parameters, uses global
+    */
+    function getWelcomeMessage() {
+      let welcomeMessage = "Welcome to " + gameTitle + "! Prepare to play.";
+      return welcomeMessage;
+    }
+
+
+    /*
+       Task 4
+       Uses return value
+    */
+    function startGame() {
+      let message = getWelcomeMessage();
+      alert(message);
+    }
+
+
+    /*
+       Task 5
+       No parameters, no return
+    */
+    function endGame() {
+      alert("The game of " + gameTitle + " has ended. Thanks for playing!");
+    }
+
+
+    /*
+       Bonus
+       Parameter + global + return
+    */
+    function announceWinner(playerName) {
+      let winnerMessage = playerName + " has won the game of " + gameTitle + "!";
+      alert(winnerMessage);
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Board Game Turn Demo</h1>
+
+  <!-- Turn buttons -->
+  <button onclick="takeTurn('Player 1')">Player 1 Turn</button>
+  <button onclick="takeTurn('Player 2')">Player 2 Turn</button>
+
+  <br><br>
+
+  <!-- Game flow buttons -->
+  <button onclick="startGame()">Start Game</button>
+  <button onclick="endGame()">End Game</button>
+
+  <br><br>
+
+  <!-- Bonus -->
+  <button onclick="announceWinner('Player 1')">Announce Winner</button>
+
+</body>
+</html>

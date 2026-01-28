@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Board Game Turns - JavaScript Functions</title>
+
+  <script>
+
+    // global variable
+    let gameTitle = "Dungeon Dice";
+
+
+    /*
+       Task 1
+       Create a function named buildTurnMessage
+       - Takes ONE parameter: playerName
+       - Creates a LOCAL variable named message
+       - Uses gameTitle and playerName
+       - RETURNS the message
+    */
+
+    function buildTurnMessage(playerName) {
+    }
+
+
+    /*
+       Task 2
+       Create a function named takeTurn
+       - Takes ONE parameter: playerName
+       - Calls buildTurnMessage
+       - Stores the returned value in a LOCAL variable
+       - Displays the message using alert()
+    */
+
+    function takeTurn(playerName) {
+    }
+
+
+    /*
+       Task 3
+       Create a function named getWelcomeMessage
+       - NO parameters
+       - Uses the GLOBAL variable gameTitle
+       - Uses at least ONE local variable
+       - RETURNS a welcome message
+    */
+
+
+    // TODO: Write getWelcomeMessage here
+
+
+    /*
+       Task 4
+       Create a function named startGame
+       - Calls getWelcomeMessage
+       - Stores the returned value
+       - Displays it using alert()
+    */
+
+    // TODO: Write startGame here
+
+
+    /*
+       Task 5
+       Create a function named endGame
+       - NO parameters
+       - NO return value
+       - Displays an alert saying the game has ended
+    */
+
+    // TODO: Write endGame here
+
+    /*
+       Bonus (Optional)
+       Create a function named announceWinner
+       - Takes ONE parameter: playerName
+       - Uses the GLOBAL variable gameTitle
+       - RETURNS a message announcing the winner
+       - Uses alert() when called
+    */
+
+    // TODO: Write announceWinner here
+
+  </script>
+</head>
+<body>
+
+  <h1>Board Game Turn Demo</h1>
+
+  <!-- Tasks 1 & 2 BUTTONS -->
+  <button onclick="takeTurn('Player 1')">Player 1 Turn</button>
+  <button onclick="takeTurn('Player 2')">Player 2 Turn</button>
+
+  <!-- Tasks 3 & 4 -->
+  <button onclick="startGame()">Start Game</button>
+
+  <!-- Task 5 -->
+  <button onclick="endGame()">End Game</button>
+
+  <!-- Bonus -->
+  <button onclick="announceWinner('Player 1')">Announce Winner</button>
+
+</body>
+</html>
