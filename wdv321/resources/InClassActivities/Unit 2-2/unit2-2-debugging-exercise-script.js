@@ -1,17 +1,25 @@
-const genreSelect = document.querySelector("#genreSelect");
+const genreSelect = document.querySelector("genreSelect");
+let previousGenre = "";
 
-genreSelect.addEventListener("click", function(e) {
+genreSelect.addEventListener("click", function () {
 
     hideAllGenres;
 
-    const selectedGenre = genreSelect.text;
+    let selectedGenre = genreSelect.value;
 
-    if (selectedGenre = "rock") {
-        document.querySelector("rock").classList.remove("hidden");
-    } else if (selectedGenre === "pop") {
-        document.getElementById("pop").classList.remove("hidden");
-    } else if (selectedGenre === "jazz") {
-        document.getElementById("jazz").classList.remove("hidden");
+    if (previousGenre !== selectedGenre) {
+
+        if (selectedGenre = "rock") {
+            document.querySelector("rock").classList.remove("hidden");
+        }
+        else if (selectedGenre = "pop") {
+            document.querySelector("pop").classList.remove("hidden");
+        }
+        else if (selectedGenre = "jazz") {
+            document.querySelector("jazz").classList.remove("hidden");
+        }
+
+        previousGenre = selectedGenre;
     }
 });
 
