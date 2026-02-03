@@ -6,14 +6,14 @@
 
   <script>
     // global variable
-    let gameTitle = "Dungeon Dice";
+    const gameTitle = "Dungeon Dice";
 
     /*
        Task 1
        Builds and Returns a message
     */
     function buildTurnMessage(playerName) {
-      let message = gameTitle + ": It is now " + playerName + "'s turn.";
+      const message = gameTitle + ": It is now " + playerName + "'s turn.";
       return message;
     }
 
@@ -23,7 +23,7 @@
        Calls another function
     */
     function takeTurn(playerName) {
-      let turnMessage = buildTurnMessage(playerName);
+      const turnMessage = buildTurnMessage(playerName);
       alert(turnMessage);
     }
 
@@ -33,7 +33,7 @@
        No parameters, uses global
     */
     function getWelcomeMessage() {
-      let welcomeMessage = "Welcome to " + gameTitle + "! Prepare to play.";
+      const welcomeMessage = "Welcome to " + gameTitle + "! Prepare to play.";
       return welcomeMessage;
     }
 
@@ -43,7 +43,7 @@
        Uses return value
     */
     function startGame() {
-      let message = getWelcomeMessage();
+      const message = getWelcomeMessage();
       alert(message);
     }
 
@@ -62,7 +62,7 @@
        Parameter + global + return
     */
     function announceWinner(playerName) {
-      let winnerMessage = playerName + " has won the game of " + gameTitle + "!";
+      const winnerMessage = playerName + " has won the game of " + gameTitle + "!";
       alert(winnerMessage);
     }
   </script>

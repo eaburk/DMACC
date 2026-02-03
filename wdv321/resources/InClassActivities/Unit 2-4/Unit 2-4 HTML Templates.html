@@ -1,0 +1,24 @@
+// INSTRUCTIONS
+//   Create a web page with the provided template.
+//   Use the provided JS data source to dynamically generate a profile card for each person.
+//   Use the the clone concept we learned to fill in the name and title from the JS array and
+//     output to the display inside the "profiles" div.
+
+// HTML TEMPLATE
+<template id="profileTemplate">
+  <div class="card">
+    <h2 class="name"></h2>
+    <p class="title"></p>
+  </div>
+</template>
+
+<div id="profiles"></div>
+
+
+
+// JAVASCRIPT DATA SOURCE
+const people = [
+  { name: "Alice Johnson", title: "Web Developer" },
+  { name: "Bob Smith", title: "UX Designer" },
+  { name: "Charlie Kim", title: "Project Manager" }
+];

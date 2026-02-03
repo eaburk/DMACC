@@ -7,7 +7,7 @@ genreSelect.addEventListener("change", function () {
 
     // FIX #2: Use .value to get the selected option from a <select>
     // Original bug: genreSelect.text
-    const selectedGenre = genreSelect.value;
+    let selectedGenre = genreSelect.value;
 
     // FIX #3: Use comparison (===), not assignment (=)
     // Original bug: if (selectedGenre = "rock")
