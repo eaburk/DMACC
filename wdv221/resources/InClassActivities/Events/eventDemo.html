@@ -3,12 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Demo</title>
-  <script src="eventDemo.js" defer></script>
+  <title>Events Demo</title>
+  <script>
+    // Technique #1 - HTML Attribute
+    const clickMe = () => {
+      console.log("Button was clicked!");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Technique #2 - JS Property
+      document.getElementById("button2").onclick = () => {
+        console.log("The second button was clicked!");
+      }
+
+      // Technique #3 - addEventListener()
+      document.getElementById("button3").addEventListener("click", () => {
+        console.log("The third button was clicked!");
+      });
+
+      // Technique #3 - addEventListner() - Accessing value property
+      document.getElementById("selectNames").addEventListener("change", (event) => {
+        console.log(event.currentTarget.value);
+      });
+    });
+  </script>
 </head>
 <body>
-  <button id="btnWelcome">Welcome</button>
-  <p id="myParagraph">My Paragraph</p>
-  <img src="images/koalas.jpg" width="200" height="200">
+  <!-- Uses Technique #1 -->
+  <button onclick="clickMe()">Click me</button>
+
+  <!-- Uses Technique #2 -->
+  <button id="button2">Click Me Too</button>
+
+  <!-- Uses Technique #3 -->
+  <button id="button3">Click Me Three</button>
+
+  <!-- Uses Technique #3 and access .value property -->
+  <select id="selectNames">
+    <option value="JS">Jack Smith</option>
+    <option value="AA">Alice Anderson</option>
+    <option value="FJ">Fred Johnson</option>
+  </select>
 </body>
 </html>
