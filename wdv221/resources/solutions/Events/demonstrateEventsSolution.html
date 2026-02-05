@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Intro to Events</title>
+  <style>
+    p {
+      padding: 15px;
+    }
+  </style>
+
+  <script>
+    const pageLoaded = () => {
+      // #1
+      console.log("Page Loaded");
+
+      // #3
+      document.getElementById("messageParagraph").onmouseover = () => {
+        console.log("Mouse over event triggered");
+      }
+      document.getElementById("messageParagraph").onmouseleave = () => {
+        console.log("Mouse leave event triggered");
+      }
+
+      // #4
+      document.getElementById("roleSelect").addEventListener("change", (event) => {
+        console.log(event.currentTarget.value);
+      });
+    }
+
+    // #2
+    const buttonClick = () => {
+      console.log("Click me button clicked");
+    }
+  </script>
+</head>
+
+
+<body onload="pageLoaded()">
+  <!--
+    RULES:
+    - JS code must be in the <head> section.
+
+    INSTRUCTIONS:
+    1. Implement the pageLoaded() function. Log "Page loaded" to the console.
+
+    2. Add an HTML attribute onclick to the "click me" button
+       to log "Click me button clicked" message to the console
+
+    3. Using JS properties mouseover, mouseleave - assign event handlers to the paragraph tag
+       Log the events to the console.
+
+    4. Add a change event listener to the dropdown using addEventListener()
+       Log the new value to the console.
+  -->
+  <button id="clickMe" onclick="buttonClick()">Click Me</button><br>
+
+  <p id="messageParagraph">This will log a message on mouseover and mouseleave</p>
+
+  <label for="roleSelect">Choose a role:</label>
+  <select id="roleSelect">
+    <option value="">-- Select a role --</option>
+    <option value="developer">Web Developer</option>
+    <option value="designer">UX Designer</option>
+    <option value="manager">Project Manager</option>
+  </select>
+
+</body>
+</html>
