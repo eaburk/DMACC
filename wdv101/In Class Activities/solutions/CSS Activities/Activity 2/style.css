@@ -1,0 +1,49 @@
+/* Part 1: Basic selectors */
+h2 {
+    font-family: Georgia;
+}
+
+h1, h2 {
+    color: darkslateblue;
+}
+
+/* Part 2: Class and ID selectors */
+.highlight {
+    background-color: lightyellow;
+    color: navy; /* Part 6: higher specificity */
+}
+
+#wrapper {
+    width: 75%;
+    margin: 0 auto;
+
+    /* Part 5: inheritance */
+    font-family: Arial;
+    font-size: 18px;
+}
+
+/* Part 3: Descendant selector */
+ol li {
+    color: darkgreen;
+}
+
+/* Part 4: Pseudo-class */
+a:hover {
+    color: crimson;
+}
+
+/* Part 5: Span + class selector */
+.emphasis {
+    font-weight: bold;
+}
+
+/* Part 6: Specificity conflict */
+p {
+    color: gray;
+}
+
+/*
+Explanation:
+The .highlight class has higher specificity than the p element selector,
+so its color rule overrides the p color.
+*/

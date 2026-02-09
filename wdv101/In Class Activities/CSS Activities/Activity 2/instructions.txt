@@ -1,0 +1,26 @@
+Part 1: Basic Selectors
+	1.	Use an element selector to set all <h2> elements to font-family: Georgia;
+	2.	Use a group selector to set both <h1> and <h2> text color to darkslateblue.
+
+Part 2: Classes and IDs
+	3.	Use a class selector to give .highlight a background-color: lightyellow;
+	4.	Use an ID selector to set #wrapper to:
+	•	width: 75%;
+	•	margin: 0 auto;
+
+Part 3: Descendants
+	5.	Use a descendant selector to make only the list items inside the ordered list (<ol>) have color: darkgreen;
+
+Part 4: Pseudo-classes
+	6.	Use a pseudo-class so the link turns crimson when the user hovers over it.
+
+Part 5: Inheritance & Spans
+	7.	Set the font-family: Arial; and font-size: 18px; on the #wrapper and observe how child elements inherit this styling.
+	8.	Use a class selector to make the text inside the <span class="emphasis"> bold.
+
+Part 6: Specificity Check
+	9.	Create a rule that sets all <p> elements to color: gray;
+	10.	Create a rule that sets the .highlight class to color: navy;
+
+Question to answer (a comment in CSS):
+Why does the .highlight text remain navy instead of gray?

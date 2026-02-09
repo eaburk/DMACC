@@ -1,0 +1,50 @@
+/* Mission 4: Universal selector */
+* {
+    box-sizing: border-box;
+}
+
+/* Mission 1: Element selector */
+h2 {
+    font-family: Arial;
+}
+
+/* Mission 1: Group selector */
+h1, h2 {
+    color: purple;
+}
+
+/* Mission 2: Class selector */
+.special-text {
+    background-color: lightgreen;
+    color: blue; /* Mission 6 */
+}
+
+/* Mission 2: ID selector */
+#container {
+    width: 80%;
+    margin: 0 auto;
+
+    /* Mission 5: Inheritance */
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+/* Mission 3: Descendant selector */
+ul li {
+    color: darkblue;
+}
+
+/* Mission 4: Pseudo-class */
+a:hover {
+    color: hotpink;
+}
+
+/* Mission 6: Element selector conflict */
+p {
+    color: red;
+}
+
+/* Mission 5: Span + class selector */
+.bold-text {
+    font-weight: bold;
+}
