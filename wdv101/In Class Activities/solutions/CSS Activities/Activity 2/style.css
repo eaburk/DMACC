@@ -1,49 +1,121 @@
-/* Part 1: Basic selectors */
-h2 {
-    font-family: Georgia;
-}
+/* ---------------------------
+   Part 1 – Selectors Practice
+---------------------------- */
 
+/* Grouped selector */
 h1, h2 {
-    color: darkslateblue;
+    font-family: Arial, sans-serif;
 }
 
-/* Part 2: Class and ID selectors */
+/* Descendant selector (only links inside nav) */
+nav a {
+    color: white;
+}
+
+/* Independent class selector */
 .highlight {
-    background-color: lightyellow;
-    color: navy; /* Part 6: higher specificity */
+    color: darkblue;
 }
 
-#wrapper {
-    width: 75%;
-    margin: 0 auto;
-
-    /* Part 5: inheritance */
-    font-family: Arial;
-    font-size: 18px;
-}
-
-/* Part 3: Descendant selector */
-ol li {
+/* Dependent class selector (only paragraphs with this class) */
+p.intro {
     color: darkgreen;
 }
 
-/* Part 4: Pseudo-class */
-a:hover {
-    color: crimson;
+/* ---------------------------
+   Part 2 – List Styling
+---------------------------- */
+
+/* Ordered list styling */
+ol {
+    list-style-type: upper-roman;
+    list-style-position: inside;
 }
 
-/* Part 5: Span + class selector */
-.emphasis {
+/* Unordered list styling */
+.custom-list {
+    list-style-type: square;
+}
+
+/* Challenge – list-style-image */
+.custom-list {
+    list-style-image: url("small-icon.gif"); /* replace with actual gif file */
+}
+
+/* ---------------------------
+   Part 3 – Hyperlink Styling
+---------------------------- */
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: orange;
+}
+
+a:focus {
+    outline: 2px solid red;
+}
+
+/* ---------------------------
+   Part 4 – Typography
+---------------------------- */
+
+.page-title {
+    text-transform: uppercase;
+    text-align: center;
     font-weight: bold;
 }
 
-/* Part 6: Specificity conflict */
-p {
-    color: gray;
+main p {
+    line-height: 1.6;
 }
 
-/*
-Explanation:
-The .highlight class has higher specificity than the p element selector,
-so its color rule overrides the p color.
-*/
+/* ---------------------------
+   Part 5 – Pseudo-Element
+---------------------------- */
+
+.first-letter::first-letter {
+    font-size: 200%;
+    color: crimson;
+    font-weight: bold;
+}
+
+/* ---------------------------
+   Part 6 – Navigation Bar
+---------------------------- */
+
+nav {
+    background-color: black;
+    padding: 10px;
+}
+
+/* Remove bullets */
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Make list items inline */
+.nav-list li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Remove underline */
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Hover + Focus effects */
+nav a:hover,
+nav a:focus {
+    color: yellow;
+}
