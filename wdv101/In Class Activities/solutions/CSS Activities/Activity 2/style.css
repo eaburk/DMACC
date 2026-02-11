@@ -2,22 +2,23 @@
    Part 1 – Selectors Practice
 ---------------------------- */
 
-/* Grouped selector */
+/* 1. Grouped selector */
 h1, h2 {
     font-family: Arial, sans-serif;
 }
 
-/* Descendant selector (only links inside nav) */
+/* 2. Descendant selector (only links inside nav) */
 nav a {
     color: white;
 }
 
-/* Independent class selector */
+/* 3a. Independent class selector */
 .highlight {
     color: darkblue;
+    font-weight: bold;
 }
 
-/* Dependent class selector (only paragraphs with this class) */
+/* 3b. Dependent class selector (only paragraphs with class intro) */
 p.intro {
     color: darkgreen;
 }
@@ -26,21 +27,23 @@ p.intro {
    Part 2 – List Styling
 ---------------------------- */
 
-/* Ordered list styling */
+/* 4. Ordered list styling */
 ol {
     list-style-type: upper-roman;
     list-style-position: inside;
 }
 
-/* Unordered list styling */
+/* 5. Unordered list styling */
 .custom-list {
     list-style-type: square;
 }
 
-/* Challenge – list-style-image */
+/* 6. Challenge – list-style-image (optional) */
+/*
 .custom-list {
-    list-style-image: url("small-icon.gif"); /* replace with actual gif file */
+    list-style-image: url("small-icon.gif");
 }
+*/
 
 /* ---------------------------
    Part 3 – Hyperlink Styling
@@ -69,7 +72,7 @@ a:focus {
 .page-title {
     text-transform: uppercase;
     text-align: center;
-    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 main p {
@@ -80,16 +83,17 @@ main p {
    Part 5 – Pseudo-Element
 ---------------------------- */
 
-.first-letter::first-letter {
+.intro::first-letter {
     font-size: 200%;
-    color: crimson;
     font-weight: bold;
+    color: crimson;
 }
 
 /* ---------------------------
    Part 6 – Navigation Bar
 ---------------------------- */
 
+/* Nav background */
 nav {
     background-color: black;
     padding: 10px;
@@ -102,13 +106,13 @@ nav {
     margin: 0;
 }
 
-/* Make list items inline */
+/* Display nav items inline */
 .nav-list li {
     display: inline;
     margin-right: 20px;
 }
 
-/* Remove underline */
+/* Remove underline + set text color */
 nav a {
     text-decoration: none;
     color: white;
