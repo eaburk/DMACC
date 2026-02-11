@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Feedback Form</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    #message {
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: green;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    button {
+        margin-top: 15px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Feedback Form</h2>
+
+<div id="message"></div>
+
+<form id="feedbackForm">
+
+    <!-- Name (Required) -->
+    <label>
+        Name:
+        <input type="text" required>
+    </label>
+
+    <!-- Checkboxes (At least one required trick) -->
+    <label>Select at least one feature:</label>
+    <label><input type="checkbox" name="features"> Design</label>
+    <label><input type="checkbox" name="features"> Content</label>
+    <label><input type="checkbox" name="features"> Ease of Use</label>
+
+    <!-- Dropdown (Required) -->
+    <label>
+        Rate your experience:
+        <select>
+            <option value="">-- Select --</option>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+        </select>
+    </label>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+
+</form>
+
+
+</body>
+</html>
