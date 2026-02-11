@@ -1,0 +1,72 @@
+Part 1 – Selectors Practice
+	1.	Use a grouped selector to apply the same font-family to both:
+	•	<h1>
+	•	<h2>
+	2.	Use a descendant selector to change the color of links only inside the <nav> element.
+	3.	Create:
+	•	One independent class selector (can apply to any element).
+	•	One dependent class selector that applies only to a paragraph with a specific class.
+
+Apply both classes somewhere in the HTML.
+
+⸻
+
+Part 2 – List Styling
+	4.	Change the appearance of the ordered list using:
+	•	list-style-type
+	•	list-style-position
+	5.	Change the unordered list using:
+	•	list-style-type
+	6.	Challenge (Optional):
+Replace the unordered list bullets using:
+	•	list-style-image
+Use a small .gif file.
+
+⸻
+
+Part 3 – Hyperlink Styling
+	7.	Style hyperlinks using these pseudo-classes:
+	•	:link
+	•	:visited
+	•	:hover
+	•	:focus
+
+Each state must look different.
+
+⸻
+
+Part 4 – Typography
+	8.	Use at least three text or font properties, such as:
+	•	text-transform
+	•	text-align
+	•	font-weight
+	•	letter-spacing
+	•	line-height
+
+Apply them meaningfully to headings or paragraphs.
+
+⸻
+
+Part 5 – Pseudo-Element
+	9.	Create a class that uses the pseudo-element:
+	•	::first-letter
+
+Style the first letter by:
+	•	Increasing its size
+	•	Changing its color
+	•	Making it bold
+
+Apply this class to the first paragraph only.
+
+⸻
+
+Part 6 – Navigation Bar Styling
+	10.	Convert the navigation list into an inline navigation bar using CSS.
+
+Requirements:
+	•	Remove bullets using list-style-type
+	•	Remove underline using text-decoration
+	•	Display navigation items inline
+	•	Add background color to the <nav> element
+	•	Change text color
+	•	Add both hover and focus effects for nav links
