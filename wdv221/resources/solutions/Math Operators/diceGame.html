@@ -8,21 +8,44 @@
 <body>
   <h1>Dice Game</h1>
 
-  <button onclick="rollDice()">Roll Dice</button>
+  <button id="btnRollDice">Roll Dice</button>
   <script>
+    // Define a global variable called rollCount to keep track of the roll count
+    // This variable will be incremented by 1 each time the dice is "rolled"
+
+    // Define a function called rollDice(). This function will:
+    //   Update the rollCount variable
+    //   Generate a random number between 1 and 6. Reference: https://www.w3schools.com/js/js_random.asp
+    //        Hint - the last example will work for this exercise
+    //   console.log() the following:
+    //     Roll count
+    //     Roll value
+    //     Rolled value is even or odd (use the modulus operator)
+    //     Example output:
+    //       "Roll Number: roll count"
+    //       "You Rolled: rolled value"
+    //       "Even? true or false"
+    // Add an event listener to the button to call the rollDice() function when it's clicked - use addEventListener()
     let rollCount = 0;
 
     const rollDice = () => {
-      // Keep track of the roll count an display it in the console
-      // generate a random number, use this formula: Math.floor(Math.random() * 6) + 1
-      rollCount++;
+      // Keep track of the roll count
+      rollCount += 1;
 
-      let roll = Math.floor(Math.random() * 6) + 1;
+      // Calculate random number between 1 and 6
+      const rollValue = Math.floor(Math.random() * 6) + 1;
+      const isEven = (rollValue % 2 === 0);
 
+      // log the output
       console.log("Roll number:", rollCount);
-      console.log("You rolled:", roll);
-      console.log("Even?", roll % 2 === 0);
+      console.log("You rolled:", rollValue);
+      console.log("Even?", isEven);
     }
+
+    // attach the click event and call rollDice() for the click handler
+    document.getElementById("btnRollDice").addEventListener("click", rollDice);
+
+
   </script>
 </body>
 </html>
