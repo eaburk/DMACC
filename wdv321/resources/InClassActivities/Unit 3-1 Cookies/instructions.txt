@@ -1,0 +1,9 @@
+Requirements:
+	1.	When user clicks “Dark Mode”:
+	•	Set cookie theme=dark
+	2.	When user clicks “Light Mode”:
+	•	Set cookie theme=light
+	3.	On page load:
+	•	Check cookie
+	•	Apply theme automatically
+	4.	Cookie must persist for 7 days
