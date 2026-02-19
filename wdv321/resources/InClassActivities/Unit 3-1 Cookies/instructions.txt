@@ -1,4 +1,9 @@
-Requirements:
+Note: Use the provided helper functions to manage cookies.
+File Structure:
+  index.html - UI
+  helperFunctions.js - helper functions provided
+  script.js - UI interaction
+
 	1.	When user clicks “Dark Mode”:
 	•	Set cookie theme=dark
 	2.	When user clicks “Light Mode”:
@@ -7,3 +12,6 @@ Requirements:
 	•	Check cookie
 	•	Apply theme automatically
 	4.	Cookie must persist for 7 days
+
+  Challenge: Import the script files as modules, export the helper functions
+  and import to use them
