@@ -1,20 +1,23 @@
 Purpose: Theme Manager
+
 Description: Have a Dark Mode and Light mode button on a web page that uses cookies to set a value and apply
-a color to the background of th webpage.
+a color to the background of the webpage.
+
 Note: Use the provided helper functions to manage cookies.
+
 File Structure:
   index.html - UI
   helperFunctions.js - helper functions provided
   script.js - UI interaction
 
-	1.	When user clicks “Dark Mode”:
-	•	Set cookie theme=dark
-	2.	When user clicks “Light Mode”:
-	•	Set cookie theme=light
-	3.	On page load:
-	•	Check cookie
-	•	Apply theme automatically
-	4.	Cookie must persist for 7 days
+1. When user clicks “Dark Mode”:
+  •	Set cookie theme=dark
+2. When user clicks “Light Mode”:
+  • Set cookie theme=light
+3. On page load:
+  •	Check cookie
+  • Apply theme automatically
+4. Cookie must persist for 7 days
 
-  Challenge: Import the script files as modules, export the helper functions
-  and import to use them
+Challenge: Import the script files as modules, export the helper functions
+and import to use them.
