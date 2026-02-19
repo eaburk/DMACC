@@ -1,3 +1,6 @@
+Purpose: Theme Manager
+Description: Have a Dark Mode and Light mode button on a web page that uses cookies to set a value and apply
+a color to the background of th webpage.
 Note: Use the provided helper functions to manage cookies.
 File Structure:
   index.html - UI
