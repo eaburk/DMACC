@@ -19,26 +19,28 @@
         const welcomeMessage = document.getElementById("welcomeMessage");
 
         // Display saved name when page loads
-        window.onload = function () {
-            const storedName = localStorage.getItem("userName");
+        document.addEventListener("DOMContentLoaded", () => {
+          const storedName = localStorage.getItem("userName");
 
-            if (storedName) {
-                const parsedName = JSON.parse(storedName);
-                welcomeMessage.textContent = "Welcome back, " + parsedName + "!";
-            }
-        };
+          if (storedName) {
+            const parsedName = JSON.parse(storedName || "{}");
+            welcomeMessage.textContent = "Welcome back, " + parsedName.name + "!";
+          }
+        });
 
         // Save name when button is clicked
         saveBtn.addEventListener("click", function () {
-            const name = { name: nameInput.value };
+          const name = { name: nameInput.value };
 
-            if (name !== "") {
-                const jsonName = JSON.stringify(name);
-                localStorage.setItem("userName", jsonName);
+          if (name.name !== "") {
+            const jsonName = JSON.stringify(name);
+            localStorage.setItem("userName", jsonName);
 
-                welcomeMessage.textContent = "Welcome, " + name.name + "!";
-                nameInput.value = "";
-            }
+            welcomeMessage.textContent = "Welcome, " + name.name + "!";
+            nameInput.value = "";
+          } else {
+            alert("Fill in a name");
+          }
         });
     </script>
 
