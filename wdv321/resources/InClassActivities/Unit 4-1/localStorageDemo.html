@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Local Storage Demo</title>
+</head>
+<body>
+
+    <h2>Enter Your Name</h2>
+
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button id="saveBtn">Save Name</button>
+
+    <h3 id="welcomeMessage"></h3>
+
+    <script>
+        const nameInput = document.getElementById("nameInput");
+        const saveBtn = document.getElementById("saveBtn");
+        const welcomeMessage = document.getElementById("welcomeMessage");
+
+        // Display saved name when page loads
+        window.onload = function () {
+            const storedName = localStorage.getItem("userName");
+
+            if (storedName) {
+                const parsedName = JSON.parse(storedName);
+                welcomeMessage.textContent = "Welcome back, " + parsedName + "!";
+            }
+        };
+
+        // Save name when button is clicked
+        saveBtn.addEventListener("click", function () {
+            const name = { name: nameInput.value };
+
+            if (name !== "") {
+                const jsonName = JSON.stringify(name);
+                localStorage.setItem("userName", jsonName);
+
+                welcomeMessage.textContent = "Welcome, " + name.name + "!";
+                nameInput.value = "";
+            }
+        });
+    </script>
+
+</body>
+</html>
