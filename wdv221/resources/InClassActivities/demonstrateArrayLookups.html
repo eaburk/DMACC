@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Demo 2</title>
+</head>
+<body>
+  <script>
+    let products = ["Pen", "Paper", "Pencil"];
+    let prices = [1.29, 0.19, 0.67];
+
+    const salesTaxLookup = (event) => {
+      for(let i = 0; i < products.length; i++){
+        if(products[i] === event.currentTarget.value) {
+          console.log(`Product ${products[i]} costs ${prices[i]}`);
+        }
+      }
+    }
+  </script>
+    <select id="slctProducts">
+      <script>
+        // Method #1 using document.write() to add options to a select
+        // for(let i = 0; i < products.length; i++){
+        //   document.write(`<option>${products[i]}</option>`);
+        // }
+      </script>
+  </select>
+
+  <script>
+    // Method #2 using createElement/add to add options to a select
+    const select = document.getElementById("slctProducts");
+    for(let i = 0; i < products.length; i++){
+      const option = document.createElement("option");
+      option.textContent = products[i];
+      select.add(option);
+    }
+    document.getElementById("slctProducts").addEventListener("change", salesTaxLookup);
+  </script>
+</body>
+</html>
