@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Session Storage Form</title>
+    <style>
+        body { font-family: Arial; }
+        label { display:block; margin-top:10px; }
+    </style>
+  </head>
+  <body>
+    <h2>Contact Form</h2>
+    <form id="contactForm">
+        <label>
+            Name:
+            <input type="text" id="name">
+        </label>
+
+        <label>
+            Email:
+            <input type="email" id="email">
+        </label>
+
+        <label>
+            Comment:
+            <textarea id="comment"></textarea>
+        </label>
+    </form>
+
+    <script>
+      const form = document.getElementById("contactForm");
+
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const comment = document.getElementById("comment");
+
+      const savedData = sessionStorage.getItem("formData");
+
+      if (savedData) {
+          const formData = JSON.parse(savedData);
+
+          name.value = formData.name;
+          email.value = formData.email;
+          comment.value = formData.comment;
+      }
+
+      // Save data whenever user types
+      form.addEventListener("input", () => {
+          const formData = {};
+
+          formData.name = name.value;
+          formData.email = email.value;
+          formData.comment = comment.value;
+
+          sessionStorage.setItem("formData", JSON.stringify(formData));
+      });
+    </script>
+
+  </body>
+</html>

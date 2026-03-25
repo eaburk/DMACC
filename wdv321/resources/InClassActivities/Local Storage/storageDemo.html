@@ -4,10 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="storageDemo.js" defer></script>
 </head>
 <body>
   <input id="name" type="text" name="name">
   <input type="submit" id="submit" value="submit">
+
+  <script>
+    const submit = document.getElementById("submit");
+    const name = document.getElementById("name");
+
+    submit.addEventListener("click", () => {
+      localStorage.setItem("name", name.value);
+      console.log('SS: ', JSON.stringify(localStorage));
+      console.log("From SS: ", localStorage.name);
+    });
+  </script>
 </body>
 </html>
