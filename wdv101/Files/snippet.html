@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+
+  <!-- Get started by adding the necessary bootstrap components in the head section: the link to the stylesheet, the viewport meta.Then add the script code in the bottom just before the close of the body. (see www.getbootstrap.com). We will use our own css for styling-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <style>
+    /*Selector for viewing Bootstraps Grid in action*/
+    header {
+        background-color: lightskyblue;
+        padding: 15px 0;
+    }
+    section {
+        background-color: lightgray;
+        padding: 50px 0;
+    }
+    footer {
+        background-color: lightgreen;
+    }
+    [class^='col-'] {
+        outline: 2px solid magenta;
+    }
+    .row {
+        outline:4px solid blue;
+    }
+    .container {
+        outline: 6px solid green;
+    }
+    /* You can customize Bootstrap's classes and/or add your own CSS styling to a Bootstrap page.*/
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+        <h1>WDV101 Intro HTML and CSS</h1>
+        <h2>Bootstrap Framework</h2>
+        <p>The following are bootstrap buttons</p>
+
+        <!-- add some bootstrap buttons-->
+         <div class="pb-2">
+          <button type="button" class="btn btn-primary">Primary</button>
+          <a href="google.com" class="btn btn-secondary">Go to Google</a>
+        </div>
+    </div>
+  </header>
+
+  <!--Add a bootstrap navbar. Add the aporopriaqte bootstrap classes to each component. (w3schools) Then style using one of bootstraps colors. OR Copy and paste the code. Then enter your own hyperlinks and  text. You can use bootstraps color and background styling OR your own CSS.-->
+
+  <nav>
+    <!-- create a link to the dmacc web page.-->
+    <a href="#">DMACC</a>
+
+  </nav>
+
+  <section>
+    <div class="container">
+      <!-- Add a div class of row, then add a class of col to the divs. Bootstrap will automatically stack the columns when the viewport gets smaller. Do two columns first to see two columns. Then remove the comment and add a col class to the third. Then adjust the cols so that the middle col is larger than the other two. Style the text and background in each column using bootstrap background color to each column-->
+      <div class="row">
+        <div class="col">
+          <h3>Column 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        </div>
+
+        <div class="col">
+          <h3>Column 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        </div>
+      </div>
+    </div><!--close the container div here-->
+  </section>
+  <!--
+   Copy and past the second column to create a third column.-->
+
+  <!-- add bootstrap classes to color the background and text of the footer.-->
+
+  <footer>
+    <p class="text-center">Footer content here.</p>
+  </footer>
+
+  <!--add the bootstrap script here-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
