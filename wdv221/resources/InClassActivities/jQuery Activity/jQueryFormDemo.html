@@ -4,9 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>jQuery Form Demo</title>
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(() => {
+      // DOM is ready, attach events
+
+      $("#contactForm").on("submit", (event) => {
+        event.preventDefault();
+
+        // process the form
+
+        // vanilla javascript
+        //const name = document.getElementById("name").value;
+
+        // the jquery way
+        const name = $("#name").val();
+
+        //get the email value
+        const email = $("#email").val()
+
+        // get the message value
+
+        //concatenate the value together into a variable ex. variable name is finalOutput
+        const finalOutput =
+          `<p>Name: ${name}</p>
+          <p>Email: ${email}</p>`;
+        $("#output").html(finalOutput);
+      });
+    });
+  </script>
 </head>
 <body>
-  <form action="#" method="post">
+  <h3>Contact Form</h3>
+  <form action="#" method="post" id="contactForm">
     <label for="name">Name:</label><br>
     <input type="text" id="name" name="name"><br><br>
 
@@ -17,7 +48,8 @@
     <textarea id="message" name="message"></textarea><br><br>
 
     <input type="submit" value="Submit">
-
   </form>
+
+  <div id="output"></div>
 </body>
 </html>
