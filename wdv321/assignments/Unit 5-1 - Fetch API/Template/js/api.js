@@ -1,5 +1,5 @@
 export async function fetchData() {
-  // Fetch data using the Fetch API
+  // Fetch data using the Fetch API, use the input value to search by country name
   // Be sure to handle errors
   //   This does not mean updating the UI with error messages
   //   Instead, throw() an error that can be captured in the calling code
