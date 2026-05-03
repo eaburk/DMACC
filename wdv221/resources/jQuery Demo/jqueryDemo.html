@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Demo</title>
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+  <script>
+    //jQuery, wait for DOM to load
+    $(document).ready(() => {
+      //$("#demo").html("Eric");
+
+      $("#btnToggle").click(() => {
+        $("#demo").slideToggle(10000);
+      });
+
+      document.querySelector("#btnToggle").addEventListener("click", () => {
+        document.getElementById("demo").classList.toggle("slide");
+      })
+
+      $("#btnToggle").hover((event) => {
+        $(event.currentTarget).css("color", "red");
+      }, () => {
+        $(event.currentTarget).css("color", "black");
+      });
+    });
+  </script>
+</head>
+<body>
+  <button id="btnToggle">Toggle</button>
+  <div id="demo" style="display: none;">
+    Hello, this is a demo!
+  </div>
+</body>
+</html>

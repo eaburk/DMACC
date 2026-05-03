@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 13 Assignment Demo</title>
+</head>
+<body>
+  <script>
+    // part 1, numbers 1-4
+    const bookA = {
+      title: "Beginning Javascript",
+      price: 19.99,
+      author: "Smith",
+      studentDiscountPrice: function() {
+        return this.price * .8;
+      }
+    };
+
+    const bookB = {
+      title: "Logic with ES6",
+      price: 29.49,
+      author: "Johnson-Parker",
+      studentDiscountPrice: function() {
+        return this.price * .8;
+      }
+    }
+
+    const bookC = {
+      title: "Javascript Objects Made Easy",
+      price: 999.99,
+      author: "Westin",
+      studentDiscountPrice: function() {
+        return this.price * .8;
+      }
+    }
+    // part 1, number 4
+    console.log("Book A:", bookA);
+
+    // part 1, number 5
+    const booksArrayObject = [bookA, bookB, bookC];
+
+    // Part 2, number 2
+    console.log("Books Array Object: ", booksArrayObject);
+    console.log("JSON Books Array Object: ", JSON.stringify(booksArrayObject));
+  </script>
+</body>
+</html>
