@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+
+    form {
+      width: 500px;
+      margin: auto;
+    }
+
+    .buttonContainer {
+      margin-top: 15px;
+    }
+
+    input, select, button, textarea {
+      width: 100%;
+      padding: 5px;
+    }
+
+
+    button {
+      margin-bottom: 10px;
+    }
+
+    i {
+      color:red;
+    }
+  </style>
+</head>
+<body>
+  <form action="form_handler.php" method="post">
+    <label for="firstName">First Name:</label>
+    <input type="text" name="firstName" id="firstName">
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" name="lastName" id="lastName">
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email">
+
+    <label for="topic">Topic:</label>
+    <select name="topic" id="topic">
+      <option value="">-- Choose one --</option>
+      <option value="webdev">Web Development Service</option>
+      <option value="webdes">Web Design Service</option>
+    </select>
+
+    <label for="message">Message:</label>
+    <textarea name="message" id="message"></textarea>
+
+    <!-- <input type="submit" value="Send"> -->
+    <div class="buttonContainer">
+      <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
+      <input type="reset" value="Reset">
+    </div>
+
+  </form>
+</body>
+</html>
