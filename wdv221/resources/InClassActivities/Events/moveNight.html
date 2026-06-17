@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Night Event Practice</title>
+
+    <script>
+        function setupPage() {
+          //assign event listeners/handlers
+          // - use combination of html attributes, js properties and addeventlistener()
+          //move cursor focus to the favorite movie input
+          document.getElementById('favoriteMovie').focus();
+        }
+
+        function startMovieNight() {
+          //alert or console log the event occurred and the selected movie
+          //challenge: update the page dynamically to display the movie
+        }
+
+        function favoriteMovieFocus() {
+          //alert or console log the event occurred
+        }
+
+        function favoriteMovieBlur() {
+          //alert or console log the event occurred
+        }
+
+        function movieChanged() {
+          //alert or console log the event occurred and the selected movie
+        }
+
+    </script>
+</head>
+
+<body onload="setupPage()">
+
+    <h1>Movie Night Planner</h1>
+
+    <button>Start Movie Night</button>
+
+    <p>Tonight's featured movie is a thrilling adventure that audiences of all ages can enjoy.</p>
+
+    <label for="movieList">Choose a Movie:</label>
+    <select>
+        <option>Select a Movie</option>
+        <option>The Matrix</option>
+        <option>Jurassic Park</option>
+        <option>The Avengers</option>
+    </select>
+
+    <br><br>
+
+    <label for="favoriteMovie">Favorite Movie:</label>
+    <input type="text">
+
+</body>
+</html>
