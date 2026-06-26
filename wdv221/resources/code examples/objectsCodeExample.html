@@ -1,0 +1,162 @@
+<html>
+
+<head>
+
+    <title>WDV221 Intro Javascript</title>
+
+</head>
+
+<body>
+
+    <h1>WDV221 Intro Javascript</h1>
+    <h2>Unit-11 Javascript Objects</h2>
+    <h3>How to create, access, modify and delete with Javascript objects</h3>
+
+    <p>An object is a container that can hold content.  Objects can have properties that hold information about the object, or describe the object.  Objects and also have methods that can process the contents of the object when called.</p>
+
+    <p>In Javascript as in most applications languages everything within the language is an object. So in Javascript when you declare a variable you are actually creating an object with the name you entered. </p>
+
+    <p>Objects can be defined by the language you are working with.  In Javascript we have worked with the String object, Math object and Array object. You can also create user defined objects as needed. Such as when you define a variable.</p>
+
+    <script>
+
+        //Create an object and access its properties and methods
+
+        //create an empty user-defined Javascript object
+        //this is a variable with datatype of object
+        //NOTE: the use of the { } or curly braces to indicate an object
+
+        let exampleObject = { };
+
+        //an object defined with properties and a method
+        //properties are name value pairs stored within the object
+
+        let student = {
+            name: "Brian Anderson",
+            status: "Full-Time",
+            major: "WDV",
+            displayMajor: function () {
+                return this.name + " Major: " + this.major;
+            }
+        }    /*
+            Keyword this    It references the current object. The name property of the current object
+            note: The () are missing from the method name.  If you include them the browser will try to run the function instead of defining it within the object.
+            */
+
+        console.log( student );     //displays the student object. Cannot have anything else in log
+
+
+        //access a property of an object using object 'dot' notation or object.propertyName
+
+        console.log( "The name from the student object: " + student.name);   //displays the name
+
+        //access a method of an object. Note the use of the () on the method name
+
+        console.log( student.displayMajor() );  //displays "Brian Anderson Major: WDV"
+
+        //if you leave off the () it does not run the function, it treats it like a property
+
+        console.log( student.displayMajor);     //displays the text of the function
+
+    </script>
+
+    <p>Objects can be created and they can be modified. As a developer you can add properties and methods to an object.  You can change the contents of the properties and methods.  If needed, you can delete properties and methods from an object.</p>
+
+    <script>
+
+        //Modify or change an existing object
+
+        student.name = "Brian Craig Anderson";      //replaces old value with new value
+
+        //add a property or method to an existing object
+
+        student.numberOfCredits = 34;     //adds a new property to the object with numeric data type
+
+        console.log( student );     //displays student object so verify new property
+
+        console.log( "Student credits: " + student.numberOfCredits);
+
+        //update number of credits. Add/subtract/multiply/divide etc.
+        //This uses the numberOfCredits property as an accumulator showing a running total
+
+        student.numberOfCredits = student.numberOfCredits + 14;     //adds 14 credits to total
+
+        console.log( "Student credits: " + student.numberOfCredits);
+
+        /* The previous command can also be written using the combined operator
+
+            student.numberOfCredits += 14;  //adds 14 credits to total
+
+        */
+
+        delete student.numberOfCredits;     //remove the property from the object
+
+        console.log( student );     //displays student object so verify new property
+
+
+    </script>
+
+    <h3>What if you need multiple student objects?</h3>
+
+    <p>If this is the case then you would need to make multiple versions of the object. Each object or variable would require a different unique name. This could get tedious.</p>
+
+    <p>An array is a collection of variables with the same value.  So you could make an array of Student objects.  That would make it an array of the same value, in this case student objects.  Each object will then have unique values for their properties. Note this is an array of student objects which are the same type, even if they contain differing values.</p>
+
+    <script>
+
+        //Create an array called student
+        //Load student objects into the array.  Notice the objects are NOT named
+
+        let students = [
+
+            {name:'Brian Anderson', status:'Full Time', major: 'WDV', displayMajor: function () {return this.name + " Major: " + this.major;}
+             },
+
+            {name:"Marie Brown", status:"Full Time", major:"WDV", displayMajor: function () {return this.name + " Major: " + this.major;}},
+
+            {
+                name:"Susan Baker",
+                status: "Full Time",
+                major:"WDV",
+                displayMajor: function () {
+                    return this.name + " Major: " + this.major;
+                }
+            },
+
+        ]
+
+        console.log(students);          //display the contents of the array
+
+        console.log("Student Name: " + students[0].name);     //display name of first student
+
+        console.log("Student Status: " + students[1].status);    //display status of second student
+
+        console.log( "Student Major: " + students[2].major);    //display major of third student
+
+    </script>
+
+    <p>Loops are often used with arrays to display the contents of the array. You an also use a loop to process through an array of objects. The following output was created using a for loop to process through an array of objects.</p>
+
+    <ul>
+    <script>
+
+        for(let x=0; x<students.length; x++){
+            document.write("<li>" + students[x].name + "</li>");
+        }
+
+    </script>
+    </ul>
+
+    <p>You can use the same technique to call a method from each object in an array.</p>
+
+    <ul>
+        <script>
+
+            for(let x=0; x<students.length; x++){
+                document.write("<li>" + students[x].displayMajor() + "</li>");
+            }
+
+        </script>
+        </ul>
+</body>
+</html>
