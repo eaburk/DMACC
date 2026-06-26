@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript - Arrays</title>
+
+<script>
+
+	let scores = [];		//declare an empty array.  This is a parral array for teams. Each row holds the score for one of the teams
+
+	scores[0] = 4;			//load row 0 with a value	Why does the index of the array start with zero???
+	scores[1] = 23;			//load row 1 with a value
+	scores[2] = 15;			//load row 2 with a value
+
+	let teams = ["Dragons","Pirates","Bears"];	//declare and create a new array with the following values.
+</script>
+
+
+<script>
+
+function displayTeams()
+{
+	//alert("inside displayTeams()");
+	for(x=0;x<teams.length;x++)
+	{
+		document.write("<p>" + teams[x] + " Current Score: " + scores[x] + "</p>");
+	}
+	//Notice how this uses the same index (row number) for each array.  Row 0 is the Dragons from teams[] and 4 from scores[]
+	//This is known as parallel arrays
+
+}//end displayTeams()
+
+
+function updateScores()
+{
+	for(x=0;x<scores.length;x++)
+	{
+		scores[x] += 3;		//use the combined operator to add the 3 to the current value of the row and put the new value back into the array
+							//This is the same as scores[x] = scores[x] + 3 OR take the current value, add 3 to it and put it into the original row
+	}
+}//end updateScores()
+
+
+function lookupScore()
+{
+	let inTeam = document.getElementById("inputTeam").value;	//get input from user textfield.
+
+	document.getElementById("teamScore").innerHTML = "";		//clear values from previous attempts
+
+	for(x=0;x<teams.length;x++)
+	{
+		if (teams[x] == inTeam)
+		{
+			document.getElementById("teamScore").innerHTML = scores[x];	//Get score for selected team name
+		}
+	}//end for loop
+
+	//The following checks to see if the element content is still empty.  If so no team was found so output the Not Found message.
+	if (document.getElementById("teamScore").innerHTML == "" )
+	{
+		document.getElementById("teamScore").innerHTML = "Team is not listed";	//if the score is still blan
+	}
+
+}//end lookupScores()
+
+
+
+</script>
+
+
+
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Project-6 Arrays - Code Examples</h2>
+<p>&nbsp;</p>
+<p>For each of the following use the teams array provided in the script of this page. </p>
+<p>1. Display the array.</p>
+<p>
+  <script>
+		document.write("Contents of the teams array: " + teams);
+	</script>
+</p>
+<p>2. Display the first row of the array.</p>
+<p>
+  <script>
+		document.write("Contents of row 0 of the teams array: " + teams[0]);
+	</script>
+</p>
+<p>3. Use a for loop to write each row of the array out to this page. Each row should be in a paragraph.</p>
+<p>
+  <script>
+		for(x=0;x<teams.length;x++)
+		{
+			document.write("<p>" + teams[x] + "</p>");
+		}
+	</script>
+</p>
+<p>4. Use a while loop to write each row of the array out to this page. Each row should be in a paragraph.</p>
+<p>
+  <script>
+		let loopControl = 0;		//declare and create the loop control variable
+		while(loopControl <teams.length)
+		{
+			document.write("<p>" + teams[loopControl] + "</p>");
+			loopControl++;								//update the loop control variable inside the body of the loop
+		}
+	</script>
+</p>
+<p>5. Use a loop to write out each row of the array as list items within the following list.</p>
+<ul>
+List of Team Names
+<p>
+	<script>
+		for(x=0;x<teams.length;x++)
+		{
+			document.write("<li>" + teams[x] + "</li>");
+		}
+	</script>
+</p>
+</ul>
+
+<p>8. Create a function called displayTeams( ). It will use a loop to write out the Team name and score in the same paragraph.</p>
+<script>
+
+	displayTeams();		//this function is called during run time so that it can do document.write commands without screwing up the page.
+
+</script>
+
+<p>9. Write a loop that will add 3 to each value in the scores array. Run the displayTeams( ) function again to display the updated scores. </p>
+<script>
+
+	updateScores();		//this function will add 3 to each score in the scores[] array.
+	displayTeams();		//this function is called during run time so that it can do document.write commands without screwing up the page.
+
+</script>
+<p>10. Write a function that will search the team array for a given name. If it finds the name it will display the team's score. If not a message &quot;Team is not listed' will be displayed. This is called a lookup array.  Once the right row is located for them go to the scores array and get the corresponding score for the selected team.</p>
+<form name="form1" method="post" action="">
+  <p>
+    <label>Team Name:
+      <input type="text" name="inputTeam" id="inputTeam">
+    </label>
+  </p>
+  <p>
+    <input type="button" value="Find Score" onClick="lookupScore()" /> Score: <span id="teamScore"></span>
+  </p>
+
+</form>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+</html>
