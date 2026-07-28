@@ -11,6 +11,13 @@ Digital Ocean for Web Dev classes
 # 1. Prevent interactive prompts during installation
 export DEBIAN_FRONTEND=noninteractive
 
+####-- Create a swap file so server can handle node & mongodb --####
+fallocate -l 2G /swapfile
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab
+
 # 2. Update package repositories
 apt-get update
 apt-get upgrade -y
