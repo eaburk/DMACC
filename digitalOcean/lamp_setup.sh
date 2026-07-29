@@ -6,7 +6,7 @@
 # Stack: LAMP (Apache, MariaDB, PHP) + phpMyAdmin
 # =========================================================================
 
-# 1. Prevent interactive prompts during installation
+# Prevent interactive prompts during installation
 export DEBIAN_FRONTEND=noninteractive
 
 ####-- Create a swap file so server can handle node & mongodb --####
@@ -16,18 +16,21 @@ mkswap /swapfile
 swapon /swapfile
 echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab
 
-# 2. Update package repositories
+# Update package repositories
 apt-get update
 apt-get upgrade -y
 
-# 3. Install Apache and configure Firewall
-apt-get install -y apache2
-ufw allow 'Apache Full'
+# Install unzip
+apt-get install -y unzip
 
-# 4. Install MariaDB
+# Install Apache and configure Firewall
+apt-get install -y apache2
+#ufw allow 'Apache Full'
+
+# Install MariaDB
 apt-get install -y mariadb-server
 
-# 5. Secure MariaDB and set up root password
+# Secure MariaDB and set up root password
 # Generates a highly secure random password for the root user
 DB_ROOT_PASSWORD=$(openssl rand -base64 14)
 mariadb -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${DB_ROOT_PASSWORD}';"
@@ -38,13 +41,13 @@ mariadb -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${DB_ROOT_PASSWORD}';"
 mariadb -e "FLUSH PRIVILEGES;"
 
 # Save generated MariaDB root credentials securely on the server for your reference
-echo "MariaDB root password: ${DB_ROOT_PASSWORD}" > /root/.db_credentials_root
+echo "MariaDB root password: ${DB_ROOT_PASSWORD}" > /root/.db_credentials
 chmod 600 /root/.db_credentials
 
-# 6. Install PHP and common extensions
+# Install PHP and common extensions
 apt-get install -y php libapache2-mod-php php-mysql php-cli php-curl php-gd php-mbstring php-xml php-zip
 
-# 7. Pre-seed configuration choices for phpMyAdmin to prevent prompts
+# Pre-seed configuration choices for phpMyAdmin to prevent prompts
 debconf-set-selections <<< "phpmyadmin phpmyadmin/dbconfig-install boolean true"
 debconf-set-selections <<< "phpmyadmin phpmyadmin/app-password-confirm password ${DB_ROOT_PASSWORD}"
 debconf-set-selections <<< "phpmyadmin phpmyadmin/mysql/admin-pass password ${DB_ROOT_PASSWORD}"
@@ -54,7 +57,7 @@ debconf-set-selections <<< "phpmyadmin phpmyadmin/reconfigure-webserver multisel
 # Install phpMyAdmin
 apt-get install -y phpmyadmin
 
-# 8. Create a separate database administration user
+# Create a separate database administration user
 # MariaDB prevents root logins via phpMyAdmin by default. We create an administrative user 'admin'
 DB_ADMIN_PASSWORD=$(openssl rand -base64 14)
 mariadb -e "CREATE USER 'admin'@'localhost' IDENTIFIED BY '${DB_ADMIN_PASSWORD}';"
@@ -65,14 +68,14 @@ mariadb -e "FLUSH PRIVILEGES;"
 echo "phpMyAdmin Username: admin" >> /root/.db_credentials
 echo "phpMyAdmin Password: ${DB_ADMIN_PASSWORD}" >> /root/.db_credentials
 
-# 9. Prioritize index.php over index.html
+# Prioritize index.php over index.html
 cat <<EOF > /etc/apache2/mods-enabled/dir.conf
 <IfModule mod_dir.c>
     DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
 </IfModule>
 EOF
 
-# 10. Create a custom landing page
+# Create a custom landing page
 cat <<EOF > /var/www/html/index.php
 <!DOCTYPE html>
 <html>
@@ -99,5 +102,5 @@ EOF
 # Delete default index.html
 rm -f /var/www/html/index.html
 
-# 11. Restart Apache to apply all changes
+# Restart Apache to apply all changes
 systemctl restart apache2
