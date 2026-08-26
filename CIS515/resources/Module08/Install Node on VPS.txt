@@ -1,0 +1,17 @@
+####-- Install node version manager (nvm) and node --####
+mkdir /root/.nvm
+export NVM_DIR="/root/.nvm"
+# install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+# Load it into the current shell
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# Add to rc file so it’s always available
+cat >> ~/.bashrc <<'EOF'
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+#EOF
+
+# Install the latest its version of node
+nvm install --lts

@@ -1,0 +1,18 @@
+####-- Install MongoDB --####
+# Download the official security key
+sudo apt install curl -y # curl may already be installed
+curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg --dearmor
+# Add the MongoDB Repository Link
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+
+# Refresh Your Package List
+sudo apt update
+
+# Install the Package
+sudo apt install -y mongodb-org
+
+# Clear daemon cache links to ensure systemd discovers the newly installed file
+systemctl daemon-reload
+
+# Start the database engine and command it to boot automatically on reboot
+systemctl enable --now mongod
