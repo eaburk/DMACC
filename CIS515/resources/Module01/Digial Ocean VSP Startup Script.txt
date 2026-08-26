@@ -16,41 +16,41 @@ apt-get install -y gnupg curl apt-transport-https ca-certificates software-prope
 
 ####-- Install MongoDB --####
 # Download the official security key
-sudo apt install curl -y # curl may already be installed
-curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg --dearmor
+#sudo apt install curl -y # curl may already be installed
+#curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg --dearmor
 # Add the MongoDB Repository Link
-echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+#echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
 
 # Refresh Your Package List
-sudo apt update
+#sudo apt update
 
 # Install the Package
-sudo apt install -y mongodb-org
+#sudo apt install -y mongodb-org
 
 # Clear daemon cache links to ensure systemd discovers the newly installed file
-systemctl daemon-reload
+#systemctl daemon-reload
 
 # Start the database engine and command it to boot automatically on reboot
-systemctl enable --now mongod
+#systemctl enable --now mongod
 
 
 ####-- Install node version manager (nvm) and node --####
-mkdir /root/.nvm
-export NVM_DIR="/root/.nvm"
+#mkdir /root/.nvm
+#export NVM_DIR="/root/.nvm"
 # install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+#curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 # Load it into the current shell
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Add to rc file so it’s always available
-cat >> ~/.bashrc <<'EOF'
+#cat >> ~/.bashrc <<'EOF'
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-EOF
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+#EOF
 
 # Install the latest its version of node
-nvm install --lts
+#nvm install --lts
 
 # Install nginx
 apt install -y nginx
