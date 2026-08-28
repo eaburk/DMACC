@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Library Late Fee Calculator</title>
+</head>
+
+<body>
+  <h1>Library Late Fee Calculator</h1>
+  <p>* Current late is is <span id="lateFee"></span> per day. Premium member late fees are half.</p>
+  <form id="libraryForm">
+    <p>
+      <label for="memberType">Membership type (premium/normal):</label>
+      <input type="text" id="memberType">
+    </p>
+
+    <p>
+      <label for="daysLate">Days late:</label>
+      <input type="text" id="daysLate">
+    </p>
+
+    <p>
+      <label for="bookType">Book type:</label>
+      <select id="bookType">
+        <option value="">Select a book type</option>
+        <option value="regular">Regular</option>
+        <option value="dvd">DVD</option>
+        <option value="reference">Reference</option>
+      </select>
+    </p>
+
+    <button type="submit">Calculate Fee</button>
+    <button type="reset" id="resetButton">Reset</button>
+  </form>
+
+  <p>Result: <span id="result"></span></p>
+
+  <script src="libraryFunctions.js"></script>
+</body>
+</html>
