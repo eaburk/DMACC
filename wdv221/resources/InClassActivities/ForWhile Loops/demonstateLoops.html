@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Study Session Planner</title>
+</head>
+
+<body>
+  <h1>Study Session Planner</h1>
+
+  <h2>Today's Study Plan</h2>
+
+  <h3>Study Stations</h3>
+  <div id="stationOutput"></div>
+
+  <h3>Countdown to Break</h3>
+  <div id="countdownOutput"></div>
+
+  <h3>Focus Blocks</h3>
+  <div id="focusOutput"></div>
+
+  <h3>Break Schedule</h3>
+  <div id="breakOutput"></div>
+
+  <h3>Select a Study Subject</h3>
+  <label for="subjectSelect">Subject:</label>
+  <select id="subjectSelect">
+    <option value="">Choose a subject</option>
+  </select>
+
+  <script>
+    const stationOutput = document.querySelector("#stationOutput");
+    const countdownOutput = document.querySelector("#countdownOutput");
+    const focusOutput = document.querySelector("#focusOutput");
+    const breakOutput = document.querySelector("#breakOutput");
+    const subjectSelect = document.querySelector("#subjectSelect");
+
+    // While loop demonstration
+    let stationNumber = 1;
+    let stationText = "";
+
+    while (stationNumber <= 5) {
+      stationText += "Study station " + stationNumber + "<br>";
+      stationNumber++;
+    }
+
+    stationOutput.innerHTML = stationText;
+
+
+    // For loop demonstration
+    let countdownText = "";
+
+    for (let minutes = 8; minutes >= 4; minutes--) {
+      countdownText += minutes + " minutes remaining<br>";
+    }
+
+    countdownOutput.innerHTML = countdownText;
+
+
+    // Creating paragraph elements with a loop
+    for (let blockNumber = 1; blockNumber <= 4; blockNumber++) {
+      const paragraph = document.createElement("p");
+      paragraph.innerHTML = "Focus block " + blockNumber + ": Study for 25 minutes.";
+      focusOutput.appendChild(paragraph);
+    }
+
+
+    // Printing multiples with a loop
+    let breakText = "";
+
+    for (let breakTime = 7; breakTime <= 35; breakTime += 7) {
+      breakText += "Take a break at " + breakTime + " minutes<br>";
+    }
+
+    breakOutput.innerHTML = breakText;
+
+
+    // Creating select options with a loop
+    const subjects = [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Databases",
+      "Web Security"
+    ];
+
+    for (let index = 0; index < subjects.length; index++) {
+      const option = document.createElement("option");
+
+      option.value = subjects[index];
+      option.innerHTML = subjects[index];
+
+      subjectSelect.appendChild(option);
+    }
+  </script>
+</body>
+</html>
