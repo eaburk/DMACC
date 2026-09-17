@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!-- saved from url=(0121)file:///Users/ericburkheimer/.codex/.chatgpt-projects/g-p-6a7372fc2ae08191a82f4db3653ba90b/unit-11-concepts-template.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WDV221 Workshop Template: Book Club Check-in</title>
+  <style>
+    body { max-width: 760px; margin: 2rem auto; padding: 0 1rem; font-family: Arial, sans-serif; }
+    section { margin: 1.5rem 0; padding: 1rem; border: 1px solid #ccd6dd; border-radius: .5rem; }
+    label { display: block; margin-top: .75rem; font-weight: bold; }
+    input, button { font: inherit; padding: .45rem; margin-top: .25rem; }
+    input { width: min(100%, 22rem); box-sizing: border-box; }
+    #card { background: #f4f8fb; padding: 1rem; min-height: 4rem; }
+    #stylePreview { padding: 1rem; background: #fff8dc; }
+    #poster { width: 120px; height: 80px; display: grid; place-items: center; background: #87c9a5; border-radius: .5rem; font-size: 2rem; }
+    .outlined { border: 3px solid #30475e; }
+  </style>
+</head>
+<body>
+  <h1>Book Club Check-in</h1>
+  <p>This is a starter template. Read the comments, then complete the TODOs.</p>
+
+  <section>
+    <h2>1. Custom object + String and Date objects</h2>
+    <form id="checkInForm">
+      <label for="memberEmail">Member email</label>
+      <input id="memberEmail" type="email" required="" placeholder="reader@example.com">
+
+      <label for="meetingDate">Meeting date</label>
+      <input id="meetingDate" type="date" required="">
+
+      <button type="submit">Create check-in card</button>
+      <button type="reset">Clear card</button>
+    </form>
+    <article id="card" aria-live="polite">Your card will appear here.</article>
+  </section>
+
+  <section id="styleWorkshop">
+    <h2 id="workshopHeading">2. Style Object playground</h2>
+    <p id="colorTarget">Click me to change my text color.</p>
+    <p id="alignmentTarget">Mouse over me to change the heading alignment.</p>
+    <button id="resetAlignment" type="button">Reset heading alignment</button>
+    <p id="fontTarget">Mouse over me to try a different font.</p>
+    <button id="resetFont" type="button">Reset font</button>
+    <p id="sizeTarget">The word <span id="featuredWord">FEATURED</span> can change size.</p>
+    <button id="makeLarger" type="button">Make word larger</button>
+    <button id="makeOriginal" type="button">Restore word size</button>
+    <p id="backgroundTarget">Click me to change my background.</p>
+    <p id="visibilityTarget">Click the button to hide this message.</p>
+    <button id="hideMessage" type="button">Hide message</button>
+    <button id="showMessage" type="button">Show message</button>
+    <p id="posterInstruction">Try a mouseover and click on the poster.</p>
+    <div id="poster" role="img" aria-label="Book poster">📚</div>
+    <p id="borderTarget">Double-click me to add an outline.</p>
+    <button id="removeBorder" type="button">Remove outline</button>
+    <p id="hoverTarget">Mouse over me, then move away.</p>
+  </section>
+
+  <footer>Copyright <span id="year">2026</span> Book Club</footer>
+
+  <script>
+    function getMemberName(emailText) {
+      // TODO: return the part before the @ using indexOf() and substring().
+    }
+
+    function getEmailDomain(emailText) {
+      // Use String methods to return everything after @
+    }
+
+    // This function accepts a Date object and returns a string.
+    function formatShortDate(inputDate) {
+      // TODO: use getMonth(), getDate(), and getFullYear().
+      // Reminder: getMonth() starts at 0.
+    }
+
+    // This function also accepts a Date object and returns a string.
+    function formatFriendlyDate(inputDate) {
+      const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const monthNames = ["January", "February", "March", "April", "May", "June",
+                          "July", "August", "September", "October", "November", "December"];
+      // Hint: You can use Intl.DateTimeFormat - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
+    }
+
+    const form = document.querySelector("#checkInForm");
+    const card = document.querySelector("#card");
+
+    form.addEventListener("submit", function (event) {
+      // TODO 1: prevent the form's default page reload.
+      // TODO 2: read both input values.
+      // TODO 3: create a Date object from the date input value.
+      // TODO 4: call the String and Date functions and place results in card.
+      // Hint: use card.textContent or card.innerHTML.
+    });
+
+    form.addEventListener("reset", function () {
+      // TODO: restore the card's starting message.
+    });
+
+    // Date is a built-in object. Use one Date object for the footer year.
+    document.querySelector("#year").textContent = new Date().getFullYear();
+
+    const heading = document.querySelector("#workshopHeading");
+    const poster = document.querySelector("#poster");
+
+    document.querySelector("#colorTarget").addEventListener("click", function () {
+      // TODO: set this.style.color.
+    });
+
+    document.querySelector("#alignmentTarget").addEventListener("mouseover", function () {
+      // set heading.style.textAlign.
+    });
+
+    document.querySelector("#resetAlignment").addEventListener("click", function () {
+      // restore the heading's original alignment. An empty string removes an inline style.
+    });
+
+    document.querySelector("#fontTarget").addEventListener("mouseover", function () {
+      // set this.style.fontFamily to a font you choose.
+    });
+
+    document.querySelector("#resetFont").addEventListener("click", function () {
+      // restore the font with an empty string.
+    });
+
+    document.querySelector("#makeLarger").addEventListener("click", function () {
+      // set featuredWord.style.fontSize to "24px".
+    });
+
+    document.querySelector("#makeOriginal").addEventListener("click", function () {
+      // restore the featured word's original size.
+    });
+
+    document.querySelector("#backgroundTarget").addEventListener("click", function () {
+      // set this.style.backgroundColor.
+    });
+
+    document.querySelector("#hideMessage").addEventListener("click", function () {
+      // set visibilityTarget.style.display to "none".
+    });
+
+    document.querySelector("#showMessage").addEventListener("click", function () {
+      // set visibilityTarget.style.display to a visible display value.
+    });
+
+    poster.addEventListener("mouseover", function () {
+      // double poster.style.width and poster.style.height.
+    });
+
+    poster.addEventListener("click", function () {
+      // return the poster to its original width and height.
+    });
+
+    document.querySelector("#borderTarget").addEventListener("dblclick", function () {
+      // TODO: use this.classList.add("outlined") or this.style.border.
+    });
+
+    document.querySelector("#removeBorder").addEventListener("click", function () {
+      // use classList.remove("outlined") or clear the border style.
+    });
+
+    const hoverTarget = document.querySelector("#hoverTarget");
+    hoverTarget.addEventListener("mouseover", function () {
+      // set a temporary background color.
+    });
+    hoverTarget.addEventListener("mouseout", function () {
+      // restore the temporary background color.
+    });
+  </script>
+
+
+</body></html>
