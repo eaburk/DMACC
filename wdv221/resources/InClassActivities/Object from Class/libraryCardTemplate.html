@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library Card Class Activity</title>
+  <style>
+    body { max-width: 760px; margin: 2rem auto; padding: 0 1rem; font-family: Arial, sans-serif; }
+    form, #output { padding: 1rem; border: 1px solid #cbd5df; border-radius: .5rem; }
+    form { background: #f5f8fa; }
+    label { display: block; margin-top: .75rem; font-weight: 600; }
+    input, button { font: inherit; padding: .45rem; margin-top: .25rem; }
+    input { width: min(100%, 22rem); box-sizing: border-box; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+    th, td { border: 1px solid #b8c4ce; padding: .45rem; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Library Card Activity</h1>
+  <p>Complete the <code>LibraryCard</code> class, then use it to build the page output.</p>
+
+  <form id="cardForm">
+    <label for="memberName">Member name</label>
+    <input id="memberName" required value="John Smith">
+
+    <label for="cardNumber">Card number</label>
+    <input id="cardNumber" required value="LIB-1001">
+
+    <button type="submit">Display card information</button>
+  </form>
+
+  <section id="output" aria-live="polite">
+    Complete the JavaScript to display the library card.
+  </section>
+
+  <!-- The external file contains only the class. -->
+  <script src="LibraryCard.js"></script>
+  <script>
+    const form = document.querySelector("#cardForm");
+    const output = document.querySelector("#output");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      // TODO: create a LibraryCard object with an initial balance of 0.
+      // TODO: set the memberName and cardNumber properties.
+      // TODO: call addFee() and makePayment() at least once.
+      // TODO: use cardInfo() and the activity array to create page output.
+    });
+  </script>
+</body>
+</html>
