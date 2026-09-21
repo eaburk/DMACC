@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Follow Along: User-Defined Objects</title>
+  <style>
+    body { max-width: 850px; margin: 0 auto; padding: 28px 20px 50px; color: #222; background: #fff; font: 16px/1.55 system-ui, sans-serif; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 34px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+    .intro { color: #555; max-width: 700px; }
+    .step { margin-top: 24px; }
+    .run { margin: 12px 0 6px; color: #3157d5; font-weight: 700; }
+    pre { overflow-x: auto; padding: 14px; background: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .small { color: #666; font-size: .94rem; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="small">WDV221 • User Defined Objects</p>
+    <h1>User-defined objects: the basic pattern</h1>
+    <p class="intro">Follow along as we build a small campus-club directory using user-defined objects.</p>
+  </header>
+
+    <p>Start a new HTML file. Type each code block as it is demonstrated, then run it before moving to the next block.</p>
+
+  <section class="step">
+    <h2>1. Arrays hold the source data</h2>
+    <p>These arrays describe three clubs. The value at index 0 belongs with the other values at index 0.</p>
+    <p class="run">Run this first:</p>
+    <pre>let clubNames = ["Robotics Club", "Photography Circle", "Community Garden"];
+let meetingDays = ["Tuesday", "Thursday", "Saturday"];
+let memberCounts = [16, 9, 20];</pre>
+  </section>
+
+  <section class="step">
+    <h2>2. An object groups related values</h2>
+    <p>An object literal uses curly braces and property names to describe one thing.</p>
+    <p class="run">Run this next:</p>
+    <pre>let clubA = {
+  club_name: clubNames[0],
+  meeting_day: meetingDays[0],
+  member_count: memberCounts[0]
+};</pre>
+    <p>Use dot notation to read a property:</p>
+    <p class="run">Run these property checks:</p>
+    <pre>console.log(clubA.club_name);
+console.log(clubA.member_count);</pre>
+  </section>
+
+  <section class="step">
+    <h2>3. A method gives an object behavior</h2>
+    <p>A method is a function written inside an object. The keyword <code>this</code> refers to the object using the method.</p>
+    <p class="run">Add the method, then run the test:</p>
+    <pre>clubA.availableSpots = function() {
+  return 20 - this.member_count;
+};
+
+console.log(clubA.availableSpots());</pre>
+    <p>The method uses the current club’s member count. In the same file, create <code>clubB</code> and <code>clubC</code> with the same three properties and method, using indexes 1 and 2.</p>
+    <p class="run">For the demonstration, the remaining objects can be created like this:</p>
+    <pre>let clubB = {
+  club_name: clubNames[1],
+  meeting_day: meetingDays[1],
+  member_count: memberCounts[1],
+  availableSpots: function() {
+    return 20 - this.member_count;
+  }
+};
+
+let clubC = {
+  club_name: clubNames[2],
+  meeting_day: meetingDays[2],
+  member_count: memberCounts[2],
+  availableSpots: function() {
+    return 20 - this.member_count;
+  }
+};</pre>
+  </section>
+
+  <section class="step">
+    <h2>4. An object can contain an array of objects</h2>
+    <p>Once you have three club objects, place them in an array inside another object.</p>
+    <p class="run">Run this collection code:</p>
+    <pre>let clubDirectory = {
+  clubs: [clubA, clubB, clubC]
+};</pre>
+    <p><code>clubDirectory</code> is an object. Its <code>clubs</code> property is an array, and each item in that array is another object.</p>
+  </section>
+
+  <section class="step">
+    <h2>5. A loop repeats the same work</h2>
+    <p>The loop visits each object in the array. The variable <code>club</code> represents the current object for that pass.</p>
+    <p class="run">Run this loop:</p>
+    <pre>clubDirectory.clubs.forEach(function(club) {
+  console.log(club.club_name);
+  console.log(club.availableSpots());
+});</pre>
+  </section>
+
+  <section class="step">
+    <h2>6. JSON stores the data as text</h2>
+    <p><code>JSON.stringify</code> converts a JavaScript object into JSON text. JSON keeps the data, but not the JavaScript method.</p>
+    <p class="run">Run these JSON conversions:</p>
+    <pre>let clubAJSON = JSON.stringify(clubA);
+let clubDirectoryJSON = JSON.stringify(clubDirectory);
+
+console.log(clubA);
+console.log(clubAJSON);
+console.log(clubDirectoryJSON);</pre>
+  </section>
+
+  <h2>Result</h2>
+  <p>The completed activity has three club objects, one method on each object, a directory object containing the clubs, loop-based output, and JavaScript-to-JSON conversions.</p>
+
+
+</body></html>
