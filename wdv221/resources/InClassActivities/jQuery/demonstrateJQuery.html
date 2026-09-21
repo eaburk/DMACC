@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WDV221 jQuery Concepts Demo</title>
+  <style>
+    body {
+      background-color: #eef2f5;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 30px 15px;
+    }
+
+    #container {
+      background-color: white;
+      border: 1px solid #cbd3da;
+      margin: 0 auto;
+      max-width: 700px;
+      padding: 24px;
+    }
+
+    label { display: inline-block; margin: 8px 0 4px; }
+    input { display: block; margin-bottom: 10px; padding: 6px; width: 180px; }
+    button { margin-right: 8px; padding: 7px 12px; }
+    #resultsDisplay { display: block; margin-top: 15px; min-height: 24px; }
+    .note { color: #555; }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="container">
+    <h2>jQuery Concepts Demo</h2>
+    <h3>Rectangle Calculator</h3>
+    <p class="note">This practice page demonstrates jQuery form events, value retrieval, calculations, page updates, and reset behavior.</p>
+
+    <form id="rectangleForm">
+      <label for="widthInput">Width:</label>
+      <input type="text" id="widthInput">
+
+      <label for="heightInput">Height:</label>
+      <input type="text" id="heightInput">
+
+      <button type="submit" id="calculateButton">Calculate</button>
+      <button type="reset" id="resetButton">Reset</button>
+
+      <p id="resultsDisplay"></p>
+    </form>
+  </div>
+
+  <script>
+    // Write jQuery code to process form submit and calculate the area and perimeter based on the form inputs.
+  </script>
+</body></html>
