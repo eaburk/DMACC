@@ -15,26 +15,39 @@ div#container	{
 }
 </style>
 
-<script>	
+<script>
+    let studentName = "";  //global variable to be used later
+    let studentEmail = ""; //global variable to be used later
 
-	let studentName = "";	//global variable to be used later
-	let studentEmail = "";	//global variable to be used later
+    function displayGreeting() {
+        alert("Hello! Welcome to WDV221 Intro Javascript");
+    }
 
-	function displayGreeting() {
-		alert("Hello! Welcome to WDV221 Intro Javascript");	
-	}
-	
-	function getStudentName() {
-		studentName = prompt("Please enter your name");	
-	}
-	
-	function displayEmailServer(){
-		Alert("DMACC email address is yourname.dmacc.edu");
-	}
+    function getStudentName() {
+        studentName = prompt("Please enter your name");
+    }
 
+    function getStudentEmail() {
+        studentEmail = prompt("Please enter your DMACC Email address:");
+    }
+
+    function displayEmail() {
+        alert("Student Email: " + studentEmail);
+    }
+
+    function printStudentInfo() {
+        document.write("<p>" + studentName + "</p>");
+        document.write("<p>" + studentEmail + "</p>");
+    }
+
+    function displayEmailServer() {
+        alert("DMACC email address is yourname.dmacc.edu");
+    }
+
+    displayGreeting();
+    getStudentName();
+    getStudentEmail();
 </script>
-
-
 
 </head>
 
@@ -53,18 +66,22 @@ div#container	{
   <p>
 	<input type="button" name="button" id="button" value="Display Email" onClick="displayEmail()">
   </p>
-  <p>6. Write a function called printStudentInfo( ). The function should write the studentName and studentEmail to the web page. Each in their own paragraph.  </p>
-  
-  <script>
-	  //run printStudentInfo() here as a run time script
-  </script>
-  <p>7. Fix the  button element that will run the displayEmailServer( ) with a click event handler.</p>
-  <p>
-    <input type="button" name="button3" id="button3" value="Display Email Server" onclick="diplayemailServer()">
-  </p>
-  <p>&nbsp;</p>
-</div>
+<p>6. Write a function called printStudentInfo( ). The function should write the studentName and studentEmail to the web page. Each in their own paragraph. </p>
 
+    <script>
+        // Task 6: run printStudentInfo() here as a run time script
+        printStudentInfo();
+    </script>
+
+    <p>7. Fix the button element that will run the displayEmailServer( ) with a click event handler.</p>
+
+    <p>
+        <!-- Task 7: fixed typo from diplayemailServer() to displayEmailServer() -->
+        <input type="button" name="button3" id="button3" value="Display Email Server" onclick="displayEmailServer()">
+    </p>
+
+    <p>&nbsp;</p>
+</div>
 <h2>&nbsp;</h2>
 </body>
 </html>
