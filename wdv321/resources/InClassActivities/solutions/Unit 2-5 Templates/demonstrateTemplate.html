@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demonstrate HTML Templates</title>
+  <style>
+    .card {
+      padding: 1.25rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+      margin: 10px;
+    }
+
+    .name {
+      margin-top: 0;
+      color: #2b6cb0;
+    }
+
+    .title {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <template id="profileTemplate">
+    <div class="card">
+      <h2 class="name"></h2>
+      <p class="title"></p>
+    </div>
+  </template>
+
+  <div id="profiles"></div>
+
+  <script>
+    const people = [
+      { name: "Alice Johnson", title: "Web Developer" },
+      { name: "Bob Smith", title: "UX Designer" },
+      { name: "Charlie Kim", title: "Project Manager" }
+    ];
+
+    const profiles = document.getElementById("profiles");
+    const template = document.getElementById("profileTemplate");
+
+    people.forEach((person) => {
+      const profile = template.content.cloneNode(true);
+
+      profile.querySelector(".name").textContent = person.name;
+      profile.querySelector(".title").textContent = person.title;
+
+      profiles.appendChild(profile);
+    });
+
+    // people.forEach((person) => {
+    //   profiles.innerHTML += `
+    //     <div class="card">
+    //       <h2 class="name">${person.name}</h2>
+    //       <p class="title">${person.title}</p>
+    //     </div>
+    //   `;
+    // });
+  </script>
+</body>
+</html>
