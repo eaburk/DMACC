@@ -7,25 +7,32 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-
+  <div id="container">
     <header>
         <img src="images/logo.svg" width="200" alt="Website logo">
         <h1 id="header-title">Demo Site</h1>
-        <p><a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a></p>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
         <p><a href="#">CIS515Projects</a></p>
     </header>
 
-    <main class="content">
+    <main>
         <h1>Welcome to My Website</h1>
 
-        <p>
+        <p class="bio">
             This website demonstrates the foundation of a multi-page HTML website.
         </p>
     </main>
 
-    <footer class="content">
+    <footer id="site-footer">
         <p>&copy; 2025 My Website</p>
     </footer>
-
+  </div>
 </body>
 </html>

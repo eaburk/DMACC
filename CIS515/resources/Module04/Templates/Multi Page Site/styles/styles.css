@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+}
+
+#container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+nav {
+  background-color: antiquewhite;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline ;
+  margin: 3px 5px;
+}
+
+.bio {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#site-footer {
+  text-align: center;
+}
