@@ -18,5 +18,27 @@ apt-get install -y gnupg curl apt-transport-https ca-certificates software-prope
 apt install -y nginx
 systemctl enable --now nginx
 
+####-- Configure Nginx Directory Listing --####
+cat << 'EOF' > /etc/nginx/sites-available/default
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+  root /var/www/html;
+  index index.html index.htm;
+  server_name _;
+  location / {
+    # Enable directory listing if index.html is missing
+    autoindex on;
+    # Optional: Optional tweaks for better readability
+    autoindex_exact_size off;
+    autoindex_localtime on;
+    try_files $uri $uri/ =404;
+  }
+}
+EOF
+
+# Reload Nginx to apply the new configuration
+systemctl reload nginx
+
 # Install build essentials to support node packages
 apt install -y build-essential
